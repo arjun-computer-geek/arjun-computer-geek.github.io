@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Cardo', serif;
+}
+
+.background-img{
+    height: 100vh;
+    width: 100%;
+    background-image: url('background.jpeg');
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.profile{
+    width: auto;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 5px 10px rgba(41, 40, 40, 1);
+    padding: 40px 20px;
+    border-radius: 5%;
+    overflow-y: auto;
+}
+
+img{
+    height: 250px;
+    border-radius: 70%;
+    margin-bottom: 25px;
+}
+
+.icon{
+    color: white;
+}
+
+.profile-text{
+    margin-bottom: 20px;
+}
+
+.profile-text h2{
+    font-size: 1.6em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: 'Lobster', cursive;
+}
+.profile-text h3{
+    margin-bottom:7px;
+}
+.profile-icon a i{
+    margin: 0 5px
+}
