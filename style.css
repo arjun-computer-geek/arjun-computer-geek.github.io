@@ -523,7 +523,7 @@ justify-content: center;
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 5vh;
+    margin-top: 10vh;
 }
 
 #contact .contact-items{
