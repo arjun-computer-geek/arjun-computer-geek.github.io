@@ -380,7 +380,7 @@ justify-content: center;
 }
 
 #projects .projects-header h1{
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 #projects .all-projects{
@@ -391,7 +391,7 @@ justify-content: center;
 }
 
 #projects .all-projects a{
-    margin-top: 20px;
+    margin-top: 15px;
     color: crimson;
     font-size: 2rem;
     border:  2px solid crimson;
@@ -415,7 +415,7 @@ justify-content: center;
 }
 
 #projects .project-info{
-    padding: 30px;
+    padding: 25px;
     flex-basis: 50%;
     height: 100%;
     display: flex;
@@ -434,7 +434,7 @@ justify-content: center;
 #projects .project-info h2{
     font-size: 1.8rem;
     font-weight: 500;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 #projects .project-img{
