@@ -288,9 +288,9 @@ justify-content: center;
 
 /* End of section 1 */
 
-/* Services section */
+/* blog section */
 
-#services .services{
+#blogs .services{
     flex-direction: column;
     text-align: center;
     max-width: 1500px;
@@ -298,7 +298,7 @@ justify-content: center;
     padding: 100px 0;
 }
 
-#services .services-head p{
+#blogs .services-head p{
     font-size: 1.4rem;
     margin-top: 5px;
     padding: 1% 5%;
@@ -307,7 +307,7 @@ justify-content: center;
     letter-spacing: 0.05rem;
 }
 
-#services .services-body{
+#blogs .services-body{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -315,7 +315,7 @@ justify-content: center;
     margin-top: 50px;
 }
 
-#services .services-item{
+#blogs .services-item{
     flex-basis: 80%;
     display: flex;
     align-items: flex-start;
@@ -331,7 +331,7 @@ justify-content: center;
     overflow: hidden;
 }
 
-#services .services-item::after{
+#blogs .services-item::after{
     content: "";
     position: absolute;
     left: 0;
@@ -343,34 +343,49 @@ justify-content: center;
     z-index: -1;
 }
 
-#services .services-body .icon{
+#blogs .services-body a{
+    margin-top: 15px;
+    color: crimson;
+    font-size: 2rem;
+    border:  2px solid crimson;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#blogs .services-body a:hover{
+background-color: crimson;
+    color: white;
+}
+
+
+#blogs .services-body .icon{
     height: 80px;
     width: 80px;
     margin-bottom: 20px;
 }
 
-#services .services-body .icon i{
+#blogs .services-body .icon i{
     height: 100%;
     width: 100%;
     color: rgb(253, 238, 208);
     object-fit: cover;
 }
 
-#services .services-item h2{
+#blogs .services-item h2{
     font-size: 2rem;
     color: white;
     margin-bottom: 40px;
     /* text-transform: uppercase; */
 }
 
-#services .services-item p{
+#blogs .services-item p{
     color: white;
     text-align: left;
     font-size: 1.4rem;
     line-height: 1.9rem;
 }
 
-/* End of service section */
+/* End of blog section */
 
 /* Project section */
 #projects .projects{
@@ -392,7 +407,7 @@ justify-content: center;
 }
 
 #projects .all-projects a{
-    margin-top: 15px;
+    /* margin-top: 15px; */
     color: crimson;
     font-size: 2rem;
     border:  2px solid crimson;
@@ -429,9 +444,8 @@ justify-content: center;
     color: white;
 }
 #projects .project-info .view-btn{
-    position: absolute;
-    top: 12px;
-    right: 10px;
+    position: relative;
+    top: 0px;
 }
 #projects .project-info .view-btn a{
     font-size: 1rem;
@@ -739,7 +753,7 @@ justify-content: center;
     }
 
     /* Services */
-    #services .services-body .services-item{
+    #blogs .services-body .services-item{
         flex-basis: 45%;
         margin: 2.5%;
     }
@@ -769,6 +783,15 @@ justify-content: center;
         text-align: left;
         padding: 30px;
     }
+    /* #projects .project-info .view-btn{
+        top: 15px;
+        right: 10px;
+    }
+    #projects .project-info .view-btn a{
+        font-size: 1rem;
+        margin-top: 2px;
+        padding: 2px;
+    } */
     /* End of About */
 
 }
@@ -842,5 +865,14 @@ justify-content: center;
         margin-top: 10px;
         font-size: 1rem;
     }
+    /* #projects .project-info .view-btn{
+        top: 15px;
+        right: 10px;
+    }
+    #projects .project-info .view-btn a{
+        font-size: 1rem;
+        margin-top: 2px;
+        padding: 2px;
+    } */
 }
 /* End Of Mobile query */
