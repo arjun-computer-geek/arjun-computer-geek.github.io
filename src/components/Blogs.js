@@ -14,7 +14,7 @@ const Blogs = () => {
                     </div>
                     <div className="services-body">
                         <div class="services-item">
-                            <Link style={{border: "none"}} to={{pathname: "/archInstallationGuide.html"}}>
+                            <Link style={{border: "none"}} to="/arch_guide">
                                 <div class="icon"><i class="fa fa-cogs fa-3x"></i></div>
                                 <h2>Arch Installation Guide</h2>
                                 <p>A Simple and Step By Step Installation Guide to install Arch Linux along with the Windows 10 [Dual boot].</p>

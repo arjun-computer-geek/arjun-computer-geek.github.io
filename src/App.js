@@ -5,6 +5,7 @@ import Footer from './components/layout/Footer'
 import Home from './components/Home'
 import Projects from './components/Projects'
 import Blogs from './components/Blogs'
+import ArchGuide from './components/ArchGuide'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Route path = "/" component={Home} exact />
       <Route path = "/projects" component={Projects} exact />
       <Route path = "/blogs" component={Blogs} exact />
+      <Route path = "/arch_guide" component={ArchGuide} exact />
       <Footer/>
     </Router>
   )
