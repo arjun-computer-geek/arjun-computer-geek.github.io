@@ -196,7 +196,7 @@ justify-content: center;
 
 /* Secion 1 */
 #home-page{
-    background-image: url(./img/background.jpeg);
+    background-image: url('./img/background.jpeg');
     background-size: cover;
     background-position: top center;
     position: relative;
@@ -296,6 +296,7 @@ justify-content: center;
     max-width: 1500px;
     margin: 0 auto;
     padding: 100px 0;
+    width: 80%;
 }
 
 #blogs .services-head p{
@@ -307,13 +308,6 @@ justify-content: center;
     letter-spacing: 0.05rem;
 }
 
-#blogs .services-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 50px;
-}
 
 #blogs .services-item{
     flex-basis: 80%;
@@ -350,11 +344,6 @@ justify-content: center;
     border:  2px solid crimson;
     padding: 10px;
     border-radius: 10px;
-}
-
-#blogs .services-body a:hover{
-background-color: crimson;
-    color: white;
 }
 
 
@@ -783,16 +772,6 @@ background-color: crimson;
         text-align: left;
         padding: 30px;
     }
-    /* #projects .project-info .view-btn{
-        top: 15px;
-        right: 10px;
-    }
-    #projects .project-info .view-btn a{
-        font-size: 1rem;
-        margin-top: 2px;
-        padding: 2px;
-    } */
-    /* End of About */
 
 }
 /* End of Media Query for tablet */
@@ -865,14 +844,5 @@ background-color: crimson;
         margin-top: 10px;
         font-size: 1rem;
     }
-    /* #projects .project-info .view-btn{
-        top: 15px;
-        right: 10px;
-    }
-    #projects .project-info .view-btn a{
-        font-size: 1rem;
-        margin-top: 2px;
-        padding: 2px;
-    } */
 }
 /* End Of Mobile query */
