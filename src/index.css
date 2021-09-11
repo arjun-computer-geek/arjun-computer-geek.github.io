@@ -61,12 +61,15 @@ p{
     width: 100vw;
     height: auto;
 }
-
+#header.active{
+    height: 100vh;
+}
 #header .header {
     min-height: 8vh;
     background-color: rgba(93, 91, 91, 0.24);
     transition: .5s ease background-color;
 }
+
 #header .nav-bar{
     display: flex;
     align-items: center;
@@ -85,7 +88,7 @@ p{
     height: 100vh;
     left: 100%;
     top: 0;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -96,6 +99,7 @@ p{
 
 #header .nav-list ul.active{
     left: 0;
+    display: flex;
 }
 
 #header .nav-list ul a{
@@ -166,7 +170,7 @@ p{
 }
 
 #header .hamburger .bar::after,
-#header .hamburger .bar::after{
+#header .hamburger .bar::before{
     content: '';
     position: absolute;
     height: 100%;
@@ -396,7 +400,7 @@ p{
 }
 
 #projects .all-projects a{
-    /* margin-top: 15px; */
+    margin-top: 15px;
     color: crimson;
     font-size: 2rem;
     border:  2px solid crimson;
@@ -435,11 +439,12 @@ p{
 #projects .project-info .view-btn{
     position: relative;
     top: 0px;
+    margin-bottom: 20px;
 }
 #projects .project-info .view-btn a{
     font-size: 1rem;
-    margin-top: 5px;
-    padding: 5px;
+    margin: 5px;
+
 }
 
 #projects .project-info h1{
@@ -679,9 +684,6 @@ p{
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%,     #fd5949 45%,#d6249f 60%,#285AEB 90%);
 }
 
-#footer .social-icons a:hover .fa-youtube-play{
-    color: #f00;
-}
 
 #footer .social-icons a:hover .fa-github{
     color: #000000;
@@ -689,6 +691,10 @@ p{
 
 #footer .social-icons a:hover .fa-linkedin-square{
     color: #0099CC;
+}
+
+#footer .social-icons a:hover .fa-twitter{
+    color: #00acee;
 }
 
 #footer p{

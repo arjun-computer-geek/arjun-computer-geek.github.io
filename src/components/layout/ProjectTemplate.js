@@ -16,7 +16,7 @@ const ProjectTemplate = ({liveLink, srcLink, heading1, heading2, para, imgsrc}) 
             </div>
             
             <div className="project-img">
-                <img src={imgsrc} alt="image"/>
+                <img src={imgsrc} alt='project-img'/>
             </div>
         </div>
     )

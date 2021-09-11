@@ -72,7 +72,7 @@ const ArchGuide = () => {
                                 &nbsp; - Then Click Start.
                             <br/>
                             <br/>
-                            <img style={{width: '100%', borderRadius: '10px'}} src="/img/rufus_img.JPG" alt="installation Image"/>
+                            <img style={{width: '100%', borderRadius: '10px'}} src="/img/rufus_img.JPG" alt={`installation-img`}/>
                             <br/>
                             <br/>
                         </p>
