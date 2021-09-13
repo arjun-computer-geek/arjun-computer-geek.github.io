@@ -14,6 +14,16 @@ const Projects = () => {
                     <div className="all-projects">
 
                         <Project
+                            liveLink={`https://arjun-computer-geek.github.io/banana-translation/`} 
+                            srcLink={`https://github.com/arjun-computer-geek/banana-translation.git`} 
+                            heading1={`Banana Translator app`} 
+                            heading2={`Fun to Translate`} 
+                            para={`Used mock api. Fun to translate.`} 
+                            imgsrc={`./img/project3.png`}
+                        />
+
+
+                        <Project
                             liveLink={`https://replit.com/@arjun-computer/Levezero-CLI-Game-Mark-2?v=1`} 
                             srcLink={`https://github.com/arjun-computer-geek/level-zero-CLI-game-mark-2.git`} 
                             heading1={`CLI Quiz Game`} 
