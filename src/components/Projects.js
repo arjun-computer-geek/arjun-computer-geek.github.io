@@ -14,6 +14,15 @@ const Projects = () => {
                     <div className="all-projects">
 
                         <Project
+                            liveLink={`https://stoic-pike-a07176.netlify.app/`} 
+                            srcLink={`https://github.com/arjun-computer-geek/react-emoji-interpreter.git`} 
+                            heading1={`React Emoji interprater`} 
+                            heading2={`Made with react and hooks`} 
+                            para={`A app made with reactjs which interpret as well as show the name of emoji present in our database.`} 
+                            imgsrc={`./img/project5.png`}
+                        />
+
+                        <Project
                             liveLink={`https://compassionate-carson-43f6ab.netlify.app/`} 
                             srcLink={`https://github.com/arjun-computer-geek/groot-translator.git`} 
                             heading1={`Groot Translator app`} 
