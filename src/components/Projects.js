@@ -12,7 +12,14 @@ const Projects = () => {
                         <h1 className="section-title">MY <span> PROJECTS</span></h1>
                     </div>
                     <div className="all-projects">
-
+                        <Project
+                            liveLink={`https://arjun-computer-geek.github.io/is-your-birthday-lucky/`}
+                            srcLink={`https://github.com/arjun-computer-geek/is-your-birthday-lucky.git`}
+                            heading1={`Is Your Birthday Lucky?`}
+                            heading2={`Made with Vanilla JavaScript`}
+                            para={`A app which check wheather your birthday is lucky or not.`}
+                            imgsrc={`./img/project8.png`}
+                        />
                         <Project
                             liveLink={`https://arjun-computer-geek.github.io/cash-register/`}
                             srcLink={`https://github.com/arjun-computer-geek/cash-register.git`}
