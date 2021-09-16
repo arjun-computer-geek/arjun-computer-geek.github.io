@@ -16,7 +16,7 @@ const Projects = () => {
                             liveLink={`https://arjun-computer-geek.github.io/is-your-birthday-lucky/`}
                             srcLink={`https://github.com/arjun-computer-geek/is-your-birthday-lucky.git`}
                             heading1={`Is Your Birthday Lucky?`}
-                            heading2={`Made with Vanilla JavaScript`}
+                            heading2={`Made with Vanilla JavaScript.`}
                             para={`A app which check wheather your birthday is lucky or not.`}
                             imgsrc={`./img/project8.png`}
                         />
