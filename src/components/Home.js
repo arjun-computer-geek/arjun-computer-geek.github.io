@@ -66,30 +66,30 @@ const Home = () => {
             </section>
 
             <section id="contact">
-                <div class="contact container">
-                    <div><h1 class="section-title">Contact <span>info</span></h1></div>
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <div class="icon"><i class="fa fa-phone-square fa-5x" aria-hidden="true"></i></div>
-                            <div class="contact-info">
+                <div className="contact container">
+                    <div><h1 className="section-title">Contact <span>info</span></h1></div>
+                    <div className="contact-items">
+                        <div className="contact-item">
+                            <div className="icon"><i className="fa fa-phone-square fa-5x" aria-hidden="true"></i></div>
+                            <div className="contact-info">
                                 <h2>Phone</h2>
                                 <h3>+91 9608544916</h3>
                                 
                             </div>
                         </div>
 
-                        <div class="contact-item">
-                            <div class="icon"><i class="fa fa-envelope fa-5x" aria-hidden="true"></i></div>
-                            <div class="contact-info">
+                        <div className="contact-item">
+                            <div className="icon"><i className="fa fa-envelope fa-5x" aria-hidden="true"></i></div>
+                            <div className="contact-info">
                                 <h2>Email</h2>
                                 <h3>arjun2000raj@gmail.com</h3>
                                 
                             </div>
                         </div>
 
-                        <div class="contact-item">
-                            <div class="icon"><i class="fa fa-map-marker fa-5x" aria-hidden="true"></i></div>
-                            <div class="contact-info">
+                        <div className="contact-item">
+                            <div className="icon"><i className="fa fa-map-marker fa-5x" aria-hidden="true"></i></div>
+                            <div className="contact-info">
                                 <h2>Address</h2>
                                 <h3>Bazar samiti, Patna, Bihar, India</h3>
                                 
