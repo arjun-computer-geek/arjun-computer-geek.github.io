@@ -731,10 +731,13 @@ p{
 
 @media only screen and (max-width: 600px) {
     #projects .project-info h1{
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
     #projects .project-info h2{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+    #projects .project-info p{
+        font-size: 1rem;
     }
     #about .col-right a{
         font-size: 1.5rem;
