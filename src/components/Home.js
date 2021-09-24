@@ -21,18 +21,17 @@ const Home = () => {
                 <div className="about container">
                     <div className="col-left">
                         <div className="about-img">
-                            <img src="./img/arjun.png" alt="img"/>
+                            <img src="./img/profile.jpeg" alt="img"/>
                         </div>
                     </div>
                     <div className="col-right">
                         <h1 className="section-title">About <span>me</span></h1>
                         <h2>Full Stack Web Developer</h2>
                         <p><br/>Hi there!, <br/>
-                            I'm familiar with  HTML5 & CSS3, JavaScript NodeJs, Express, ReactJs, Git, Web Hosting and other Web technologies.<br/><br/>
+                            I'm familiar with  HTML5 & CSS3, JavaScript, NodeJs, Express, ReactJs, Git, Web Hosting and other Web technologies.<br/><br/>
 
                             <b>Thank Your!</b><br/><br/>
                         </p>
-                        <Link to="" type="button">Download Resume</Link>
                     </div>
                 </div>
             </section>
