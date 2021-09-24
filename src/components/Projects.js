@@ -13,6 +13,14 @@ const Projects = () => {
                     </div>
                     <div className="all-projects">
                         <Project
+                            liveLink={`https://youthful-varahamihira-746096.netlify.app/`}
+                            srcLink={`https://github.com/arjun-computer-geek/fun-with-triangle.git`}
+                            heading1={`Fun with triangle`}
+                            heading2={`Made with the react js.`}
+                            para={`A app made with reactJs. Using BrowserRouter, Router, Route etc.`}
+                            imgsrc={`./img/project9.png`}
+                        />
+                        <Project
                             liveLink={`https://arjun-computer-geek.github.io/is-your-birthday-lucky/`}
                             srcLink={`https://github.com/arjun-computer-geek/is-your-birthday-lucky.git`}
                             heading1={`Is Your Birthday Lucky?`}
