@@ -18,7 +18,7 @@ const Projects = () => {
                             heading1={`Fun with triangle`}
                             heading2={`Made with the react js.`}
                             para={`A app made with reactJs. Using BrowserRouter, Router, Route etc.`}
-                            imgsrc={`./img/project9.png`}
+                            imgsrc={`./img/project9.PNG`}
                         />
                         <Project
                             liveLink={`https://arjun-computer-geek.github.io/is-your-birthday-lucky/`}
