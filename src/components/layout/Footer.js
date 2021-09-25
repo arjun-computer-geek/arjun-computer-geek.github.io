@@ -18,7 +18,7 @@ const Footer = () => {
                         <Link to={{pathname : "https://www.linkedin.com/in/arjun-kumar-a752731a2"}} target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"></i></Link>
                     </div>
                 </div>
-                <p>Copyright &copy; 2020 Arjun. All rights reserved</p>
+                <p>Copyright &copy; 2021 Arjun. All rights reserved</p>
             </div>
         </section>
     )
