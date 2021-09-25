@@ -28,7 +28,7 @@ const Home = () => {
                         <h1 className="section-title">About <span>me</span></h1>
                         <h2>Full Stack Web Developer</h2>
                         <p><br/>Hi there!, <br/>
-                            I'm familiar with  HTML5 & CSS3, JavaScript, NodeJs, Express, ReactJs, Git, Web Hosting and other Web technologies.<br/><br/>
+                            I'm familiar with  HTML5 &amp; CSS3, JavaScript, NodeJs, Express, ReactJs, Git, Web Hosting and other Web technologies.<br/><br/>
 
                             <b>Thank Your!</b><br/><br/>
                         </p>
