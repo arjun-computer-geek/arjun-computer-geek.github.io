@@ -91,3 +91,8 @@
 }
 
 /* End of blog section */
+@media only screen and (max-width: 600px) {
+    .services-head p{
+        width: 100vw;
+    }
+}
