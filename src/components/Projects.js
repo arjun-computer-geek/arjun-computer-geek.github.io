@@ -12,7 +12,15 @@ const Projects = () => {
                         <h1 className="section-title">MY <span> PROJECTS</span></h1>
                     </div>
                     <div className="all-projects">
-                         <Project
+                        <Project
+                            liveLink={`https://distracted-noether-a6fab6.netlify.app/`}
+                            srcLink={`https://github.com/arjun-computer-geek/stock-app.git`}
+                            heading1={`Stock App`}
+                            heading2={`Made with vanila Js`}
+                            para={`An app which will clculate profit and los and its percentage in stock.`}
+                            imgsrc={`./img/project11.jpg`}
+                        />
+                        <Project
                             liveLink={`https://arjun-computer-geek.github.io/is-your-birthday-palindrome/`}
                             srcLink={`https://github.com/arjun-computer-geek/is-your-birthday-palindrome.git`}
                             heading1={`Is Your Birthday Palindrome`}
