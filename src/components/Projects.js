@@ -18,7 +18,7 @@ const Projects = () => {
                             heading1={`Stock App`}
                             heading2={`Made with vanila Js`}
                             para={`An app which will clculate profit and los and its percentage in stock.`}
-                            imgsrc={`./img/project11.jpg`}
+                            imgsrc={`./img/project11.JPG`}
                         />
                         <Project
                             liveLink={`https://arjun-computer-geek.github.io/is-your-birthday-palindrome/`}
@@ -26,7 +26,7 @@ const Projects = () => {
                             heading1={`Is Your Birthday Palindrome`}
                             heading2={`Made with vanila Js`}
                             para={`An app which will check the is your birthday palindrome or not? And return the next palindrome date.`}
-                            imgsrc={`./img/project10.jpg`}
+                            imgsrc={`./img/project10.JPG`}
                         />
                         <Project
                             liveLink={`https://youthful-varahamihira-746096.netlify.app/`}
@@ -88,7 +88,6 @@ const Projects = () => {
                             para={`Used mock api. Fun to translate.`}
                             imgsrc={`./img/project3.png`}
                         />
-
 
                         <Project
                             liveLink={`https://replit.com/@arjun-computer/Levezero-CLI-Game-Mark-2?v=1`}
