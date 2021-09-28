@@ -12,12 +12,20 @@ const Projects = () => {
                         <h1 className="section-title">MY <span> PROJECTS</span></h1>
                     </div>
                     <div className="all-projects">
+                         <Project
+                            liveLink={`https://arjun-computer-geek.github.io/is-your-birthday-palindrome/`}
+                            srcLink={`https://github.com/arjun-computer-geek/is-your-birthday-palindrome.git`}
+                            heading1={`Is Your Birthday Palindrome`}
+                            heading2={`Made with vanila Js`}
+                            para={`An app which will check the is your birthday palindrome or not? And return the next palindrome date.`}
+                            imgsrc={`./img/project10.jpg`}
+                        />
                         <Project
                             liveLink={`https://youthful-varahamihira-746096.netlify.app/`}
                             srcLink={`https://github.com/arjun-computer-geek/fun-with-triangle.git`}
                             heading1={`Fun with triangle`}
                             heading2={`Made with the react js.`}
-                            para={`A app made with reactJs. Using BrowserRouter, Router, Route etc.`}
+                            para={`An app made with reactJs. Using BrowserRouter, Router, Route etc.`}
                             imgsrc={`./img/project9.PNG`}
                         />
                         <Project
@@ -25,7 +33,7 @@ const Projects = () => {
                             srcLink={`https://github.com/arjun-computer-geek/is-your-birthday-lucky.git`}
                             heading1={`Is Your Birthday Lucky?`}
                             heading2={`Made with Vanilla JavaScript.`}
-                            para={`A app which check wheather your birthday is lucky or not.`}
+                            para={`An app which check wheather your birthday is lucky or not.`}
                             imgsrc={`./img/project8.png`}
                         />
                         <Project
@@ -33,7 +41,7 @@ const Projects = () => {
                             srcLink={`https://github.com/arjun-computer-geek/cash-register.git`}
                             heading1={`Cash register`}
                             heading2={`Made with Vanilla JavaScript`}
-                            para={`A app to help for give the change to the customer.`}
+                            para={`An app to help for give the change to the customer.`}
                             imgsrc={`./img/project7.png`}
                         />
 
@@ -51,7 +59,7 @@ const Projects = () => {
                             srcLink={`https://github.com/arjun-computer-geek/react-emoji-interpreter.git`}
                             heading1={`React Emoji interprater`}
                             heading2={`Made with react and hooks`}
-                            para={`A app made with reactjs which interpret as well as show the name of emoji present in our database.`}
+                            para={`An app made with reactjs which interpret as well as show the name of emoji present in our database.`}
                             imgsrc={`./img/project5.png`}
                         />
 
