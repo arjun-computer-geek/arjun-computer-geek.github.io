@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import MetaData from './layout/MetaData'
+import MetaData from '../layout/MetaData'
 import './Blogs.css'
 
 const Blogs = () => {

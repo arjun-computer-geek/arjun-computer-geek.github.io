@@ -1,5 +1,5 @@
 import React from 'react'
-import MetaData from './layout/MetaData'
+import MetaData from '../../layout/MetaData'
 import './ArchGuide.css'
 import { Link } from 'react-router-dom'
 

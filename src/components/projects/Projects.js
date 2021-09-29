@@ -1,6 +1,6 @@
 import React from 'react'
-import MetaData from './layout/MetaData'
-import Project from './layout/ProjectTemplate'
+import MetaData from '../layout/MetaData'
+import Project from '../layout/ProjectTemplate'
 
 const Projects = () => {
     return (

@@ -28,7 +28,7 @@
     flex-direction: column;
     padding: 30px;
     border-radius: 20px;
-    background-image: url('./../img/card-background.jpg');
+    background-image: url('./../../img/background.jpeg');
     background-size: cover;
     margin: 10px 5%;
     position: relative;
