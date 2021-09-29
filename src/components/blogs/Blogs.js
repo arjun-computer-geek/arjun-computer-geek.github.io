@@ -15,19 +15,19 @@ const Blogs = () => {
                     </div>
                     <div className="services-body">
 
-                        <Link  className="blog-link" style={{ border: "none" }} to="/arch_guide">
-                            <div className="services-item">
-                                <div className="icon"><i className="fa fa-cogs fa-3x"></i></div>
-                                <h2>Arch Installation Guide</h2>
-                                <p>A Simple and Step By Step Installation Guide to install Arch Linux along with the Windows 10 [Dual boot].</p>
-                            </div>
-                        </Link>
-
                         <Link className="blog-link"  style={{ border: "none" }} to="/important-linux-command">
                             <div className="services-item">
                                 <div className="icon"><i className="fa fa-cogs fa-3x"></i></div>
                                 <h2>Important Linux Command</h2>
                                 <p>A guide for important linux command</p>
+                            </div>
+                        </Link>
+
+                        <Link  className="blog-link" style={{ border: "none" }} to="/arch_guide">
+                            <div className="services-item">
+                                <div className="icon"><i className="fa fa-cogs fa-3x"></i></div>
+                                <h2>Arch Installation Guide</h2>
+                                <p>A Simple and Step By Step Installation Guide to install Arch Linux along with the Windows 10 [Dual boot].</p>
                             </div>
                         </Link>
 
