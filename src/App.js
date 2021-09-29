@@ -12,21 +12,15 @@ import ImportantLinuxCommand from './components/blogs/importLinuxCommand/Importa
 const App = () => {
   return (
     <Router>
-      <Header/>
-    <Switch>
-      <Route path = "/" component={Home} exact />
-      </Switch>
+      <Header />
       <Switch>
-      <Route path = "/projects" component={Projects} exact />
+        <Route path="/gh-pages-url" component={Home} exact />
+        <Route path="/gh-pages-url/projects" component={Projects} exact />
+        <Route path="/gh-pages-url/blogs" component={Blogs} exact />
+        <Route path="/gh-pages-url/arch_guide" component={ArchGuide} exact />
+        <Route path="/gh-pages-url/important-linux-command" component={ImportantLinuxCommand} exact />
       </Switch>
-      <Switch>
-      <Route path = "/blogs" component={Blogs} exact />
-      </Switch>
-      <Switch>
-      <Route path = "/arch_guide" component={ArchGuide} exact />
-      </Switch>
-      <Route path = "/important-linux-command" component={ImportantLinuxCommand} exact />
-      <Footer/>
+      <Footer />
     </Router>
   )
 }
