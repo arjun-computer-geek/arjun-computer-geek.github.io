@@ -58,7 +58,7 @@ const Home = () => {
                     </div>
                     <div className="services-body">
                         <p>I wrote some blogs on  tech related Topics. It helps me document my journey of learning. Go and check it out. 👇👇👇👇 </p>
-                        <Link to="/blogs" type="button">Read</Link>
+                        <Link className="read" to="/blogs" type="button">Read</Link>
                         
                     </div>
                 </div>

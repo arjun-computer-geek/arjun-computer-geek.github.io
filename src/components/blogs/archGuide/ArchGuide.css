@@ -1,30 +1,33 @@
 /* body{
     background: white;
 } */
-#header{
+
+#header {
     position: static;
 }
-.blogs{
+
+.blogs {
     min-height: 100vh;
     width: 60%;
     margin: 0 auto;
 }
 
-.arch_blog{
+.arch_blog {
     padding: 20px 0;
 }
 
-.arch_blog h1{
+.arch_blog h1 {
     text-align: center;
     font-size: 2.5rem;
     padding-bottom: 20px;
     font-weight: 500;
 }
 
-.arch_blog p{
-    font-family: 'Georgia','serif';
+.arch_blog p {
+    font-family: 'Georgia', 'serif';
 }
-.arch_blog .warning{
+
+.arch_blog .warning {
     background: rgba(243, 4, 4, 0.897);
     color: white;
     width: 100%;
@@ -32,9 +35,10 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.arch_blog .info{
+
+.arch_blog .info {
     font-size: inherit;
-    font-family: 'Georgia','serif'; 
+    font-family: 'Georgia', 'serif';
     font-size: 14pt;
     background: rgba(176, 221, 233, 0.87);
     padding: 30px 20px;
@@ -42,13 +46,13 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.arch_blog .thumbnail{
+.arch_blog .thumbnail {
     width: 100%;
     height: 60vh;
     border-radius: 10px;
 }
 
-.note{
+.note {
     width: 100%;
     height: auto;
     background: rgb(142, 233, 123);
@@ -56,4 +60,16 @@
     padding: 20px;
     color: white;
     text-shadow: 1px 1px #202020b7;
+}
+
+
+/* making mobile responsive */
+
+@media only screen and (max-width: 600px) {
+    .blogs {
+        width: 90%;
+    }
+    .arch_blog .thumbnail {
+        height: 40vh;
+    }
 }

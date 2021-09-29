@@ -1,6 +1,6 @@
 /* blog section */
 
-#blogs .services{
+#blogs .services {
     flex-direction: column;
     text-align: center;
     max-width: 1500px;
@@ -9,7 +9,7 @@
     width: 80%;
 }
 
-#blogs .services-head  p{
+#blogs .services-head p {
     font-size: 1.4rem;
     margin-top: 5px;
     padding: 1% 5%;
@@ -19,8 +19,7 @@
     margin: 100px;
 }
 
-
-#blogs .services-item{
+#blogs .services-item {
     flex-basis: 80%;
     display: flex;
     align-items: flex-start;
@@ -36,7 +35,7 @@
     overflow: hidden;
 }
 
-#blogs .services-item::after{
+#blogs .services-item::after {
     content: "";
     position: absolute;
     left: 0;
@@ -47,50 +46,55 @@
     opacity: 0.4;
     z-index: -1;
 }
-#blogs .services-body p{
+
+#blogs .services-body p {
     margin-bottom: 20px;
 }
-/* #blogs .services-body a{
+
+
+#blogs .services-body .read {
     color: crimson;
     font-size: 2rem;
-    border:  2px solid crimson;
+    border: 2px solid crimson;
     padding: 10px;
     border-radius: 10px;
-} */
+}
 
-#blogs .services-body a:hover{
+#blogs .services-body a:hover {
     background-color: crimson;
     color: white;
 }
 
-#blogs .services-body .icon{
+#blogs .services-body .icon {
     height: 80px;
     width: 80px;
     margin-bottom: 20px;
 }
 
-#blogs .services-body .icon i{
+#blogs .services-body .icon i {
     height: 100%;
     width: 100%;
     color: rgb(253, 238, 208);
     object-fit: cover;
 }
 
-#blogs .services-item h2{
+#blogs .services-item h2 {
     font-size: 2rem;
     color: white;
     margin-bottom: 40px;
     /* text-transform: uppercase; */
 }
 
-#blogs .services-item p{
+#blogs .services-item p {
     color: white;
     text-align: left;
     font-size: 1.4rem;
     line-height: 1.9rem;
 }
 
+
 /* End of blog section */
+
 @media only screen and (max-width: 600px) {
     #blogs .services-head p {
         margin: 0px;
