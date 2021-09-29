@@ -1,5 +1,6 @@
 import React from 'react'
-import { BrowserRouter as  Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { Switch } from 'react-router'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import Home from './components/home/Home'
@@ -10,15 +11,23 @@ import ImportantLinuxCommand from './components/blogs/importLinuxCommand/Importa
 
 const App = () => {
   return (
-    <Switch>
+    <Router>
       <Header/>
+    <Switch>
       <Route path = "/" component={Home} exact />
+      </Switch>
+      <Switch>
       <Route path = "/projects" component={Projects} exact />
+      </Switch>
+      <Switch>
       <Route path = "/blogs" component={Blogs} exact />
+      </Switch>
+      <Switch>
       <Route path = "/arch_guide" component={ArchGuide} exact />
+      </Switch>
       <Route path = "/important-linux-command" component={ImportantLinuxCommand} exact />
       <Footer/>
-    </Switch>
+    </Router>
   )
 }
 
