@@ -19,12 +19,12 @@ const ArchGuide = () => {
                     <br />
                     <p>
                         <b><Link to={{ pathname: "https://archlinux.org/" }} target="_blank">Arch Linux </Link></b>
-                        is a lightweight and flexible linux distribution. It works on KISS(Keep it Simple & Stupid) Principal and rolling release.
+                        is a lightweight and flexible linux distribution. It works on KISS(Keep it Simple &amp; Stupid) Principal and rolling release.
                     </p>
                     <br />
                     <br />
                     <p>
-                        Hey! Here We are going to install arch linux along with windows 10 with dual boot. A step by step guide. Please follow all the steps carefully & read instructions before run any commands otherwise it can harm your system or You may loose all your data. 🙏
+                        Hey! Here We are going to install arch linux along with windows 10 with dual boot. A step by step guide. Please follow all the steps carefully &apm; read instructions before run any commands otherwise it can harm your system or You may loose all your data. 🙏
                     </p>
                     <br />
                     <br />
@@ -159,7 +159,7 @@ const ArchGuide = () => {
                             <br />
                             <br />
                             <p>
-                                <h2>Step 5 : Connect to the internet</h2>
+                                <h2>Step 6 : Connect to the internet</h2>
                             </p>
                             <br />
                             <p>
@@ -197,7 +197,7 @@ const ArchGuide = () => {
                             </p>
                             <br />
                             <p>
-                                <h2>Step 6 : Update time and date</h2>
+                                <h2>Step 7 : Update time and date</h2>
                             </p>
                             <br />
                             <p>
@@ -209,7 +209,7 @@ const ArchGuide = () => {
                             </p>
                             <br />
                             <p>
-                                <h2>Step 7 : Create &amp; format Linux partitions</h2>
+                                <h2>Step 8 : Create &amp; format Linux partitions</h2>
                             </p>
                             <br />
 
@@ -326,7 +326,7 @@ const ArchGuide = () => {
                             </p>
                             <br />
                             <p>
-                                <h2>Step 8 : Format and mount the partitions</h2>
+                                <h2>Step 9 : Format and mount the partitions</h2>
                             </p>
                             <br />
                             <p>
@@ -361,7 +361,7 @@ const ArchGuide = () => {
                             </p>
                             <br />
                             <p>
-                                <h2>Step 9 : Install base system and other required Linux firmware packages</h2>
+                                <h2>Step 10 : Install base system and other required Linux firmware packages</h2>
                             </p>
                             <br />
                             <p>
@@ -371,7 +371,7 @@ const ArchGuide = () => {
                             </p>
                             <br />
                             <p>
-                                <h2>Step 10 : Generate fstab file</h2>
+                                <h2>Step 11 : Generate fstab file</h2>
                             </p>
                             <br />
                             <p>
@@ -380,7 +380,7 @@ const ArchGuide = () => {
                             </p>
                             <br />
                             <p>
-                                <h2>Step 11 : Change Directory</h2>
+                                <h2>Step 12 : Change Directory</h2>
                             </p>
                             <br />
                             <p>
@@ -391,7 +391,7 @@ const ArchGuide = () => {
                             </p>
                             <br />
                             <p>
-                                <h2>Step 12 : Setup timezone</h2>
+                                <h2>Step 13 : Setup timezone</h2>
                             </p>
                             <br />
                             <p>
@@ -402,12 +402,7 @@ const ArchGuide = () => {
                             </p>
                             <br />
                             <p>
-                                <h2>Step 13 : Set up locale</h2>
-                            </p>
-                            <br />
-                            <br />
-                            <p>
-                                <h2>Step 13 : Set up locale</h2>
+                                <h2>Step 14 : Set up locale</h2>
                             </p>
                             <br />
                             <p>
@@ -426,7 +421,7 @@ const ArchGuide = () => {
                             </p>
                             <br />
                             <p>
-                                <h2>Step 13 : Set up hostname</h2>
+                                <h2>Step 15 : Set up hostname</h2>
                             </p>
                             <br />
                             <p>
@@ -443,7 +438,7 @@ const ArchGuide = () => {
                             </p>
                             <br />
                             <p>
-                                <h2>Step 14 : Install netctl Network Manager</h2>
+                                <h2>Step 16 : Install netctl Network Manager</h2>
                             </p>
                             <br />
                             <p>
@@ -457,7 +452,7 @@ const ArchGuide = () => {
                             </p>
                             <br />
                             <p>
-                                <h2>Step 15 : Create a regular user</h2>
+                                <h2>Step 17 : Create a regular user</h2>
                             </p>
                             <br />
                             <p>
@@ -474,7 +469,7 @@ const ArchGuide = () => {
                             </p>
                             <br />
                             <p>
-                                <h2>Step 16 : Install GRUB bootloader</h2>
+                                <h2>Step 18 : Install GRUB bootloader</h2>
                             </p>
                             <br />
                             <p>
