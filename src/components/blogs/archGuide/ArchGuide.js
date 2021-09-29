@@ -8,7 +8,7 @@ const ArchGuide = () => {
     return (
         <>
             <MetaData title={'Arch Installation'} />
-            <section className="blogs" style={{ body: 'white' }}>
+            <section className="blogs">
                 <div className="arch_blog">
                     <h1>How to install Arch Linux along with Winodws10 (Dual Boot)</h1>
                     <img className="thumbnail" src="/img/arch_thumbnail.png" alt="arch_thumbnail" />
