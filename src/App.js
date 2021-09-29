@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import Home from './components/home/Home'
@@ -10,7 +10,7 @@ import ImportantLinuxCommand from './components/blogs/importLinuxCommand/Importa
 
 const App = () => {
   return (
-    <Router>
+    <Switch>
       <Header/>
       <Route path = "/" component={Home} exact />
       <Route path = "/projects" component={Projects} exact />
@@ -18,7 +18,7 @@ const App = () => {
       <Route path = "/arch_guide" component={ArchGuide} exact />
       <Route path = "/important-linux-command" component={ImportantLinuxCommand} exact />
       <Footer/>
-    </Router>
+    </Switch>
   )
 }
 
