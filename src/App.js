@@ -6,6 +6,7 @@ import Home from './components/home/Home'
 import Projects from './components/projects/Projects'
 import Blogs from './components/blogs/Blogs'
 import ArchGuide from './components/blogs/archGuide/ArchGuide'
+import ImportantLinuxCommand from './components/blogs/importLinuxCommand/ImportantLinuxCommand'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Route path = "/projects" component={Projects} exact />
       <Route path = "/blogs" component={Blogs} exact />
       <Route path = "/arch_guide" component={ArchGuide} exact />
+      <Route path = "/important-linux-command" component={ImportantLinuxCommand} exact />
       <Footer/>
     </Router>
   )

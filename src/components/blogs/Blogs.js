@@ -6,7 +6,7 @@ import './Blogs.css'
 const Blogs = () => {
     return (
         <>
-            <MetaData title={'Blogs'}/>
+            <MetaData title={'Blogs'} />
             <section id="blogs">
                 <div className="container services">
                     <div className="services-head">
@@ -15,21 +15,21 @@ const Blogs = () => {
                     </div>
                     <div className="services-body">
 
-                        <div className="services-item">
-                            <Link style={{border: "none"}} to="/arch_guide">
+                        <Link  className="blog-link" style={{ border: "none" }} to="/arch_guide">
+                            <div className="services-item">
                                 <div className="icon"><i className="fa fa-cogs fa-3x"></i></div>
                                 <h2>Arch Installation Guide</h2>
                                 <p>A Simple and Step By Step Installation Guide to install Arch Linux along with the Windows 10 [Dual boot].</p>
-                            </Link>
-                        </div>
+                            </div>
+                        </Link>
 
-                        <div className="services-item">
-                            <Link style={{border: "none"}} to="/arch_guide">
+                        <Link className="blog-link"  style={{ border: "none" }} to="/important-linux-command">
+                            <div className="services-item">
                                 <div className="icon"><i className="fa fa-cogs fa-3x"></i></div>
-                                <h2>Arch Installation Guide</h2>
-                                <p>A Simple and Step By Step Installation Guide to install Arch Linux along with the Windows 10 [Dual boot].</p>
-                            </Link>
-                        </div>
+                                <h2>Important Linux Command</h2>
+                                <p>A guide for important linux command</p>
+                            </div>
+                        </Link>
 
                     </div>
                 </div>

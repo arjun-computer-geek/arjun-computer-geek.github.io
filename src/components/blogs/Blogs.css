@@ -50,13 +50,13 @@
 #blogs .services-body p{
     margin-bottom: 20px;
 }
-#blogs .services-body a{
+/* #blogs .services-body a{
     color: crimson;
     font-size: 2rem;
     border:  2px solid crimson;
     padding: 10px;
     border-radius: 10px;
-}
+} */
 
 #blogs .services-body a:hover{
     background-color: crimson;
