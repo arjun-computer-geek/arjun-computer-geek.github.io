@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Route, Switch, useLocation } from 'react-router-dom'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import Home from './components/home/Home'
@@ -9,8 +9,10 @@ import ArchGuide from './components/blogs/archGuide/ArchGuide'
 import ImportantLinuxCommand from './components/blogs/importLinuxCommand/ImportantLinuxCommand'
 
 const App = () => {
+  const l =  useLocation();
+  console.log(l);
   return (
-    <Router>
+    <>
       <Header />
       <Switch>
         <Route path="/" component={Home} exact />
@@ -20,7 +22,7 @@ const App = () => {
         <Route path="/important-linux-command" component={ImportantLinuxCommand} exact />
       </Switch>
       <Footer />
-    </Router>
+    </>
   )
 }
 
