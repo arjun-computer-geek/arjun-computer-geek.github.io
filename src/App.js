@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch, useLocation } from 'react-router-dom'
+import { Route, Switch, useLocation, Redirect } from 'react-router-dom'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 import Home from './components/home/Home'
@@ -9,10 +9,21 @@ import ArchGuide from './components/blogs/archGuide/ArchGuide'
 import ImportantLinuxCommand from './components/blogs/importLinuxCommand/ImportantLinuxCommand'
 
 const App = () => {
-  const l =  useLocation();
-  console.log(l);
+  const {search} = useLocation();
+
+  const redirectUrl = () => {
+    if(search === '?/blogs'){
+     return <Redirect to={{ pathname: "/blogs"}} />
+    }
+    if(search === '?/projects'){
+     return <Redirect to={{ pathname: "/projects"}} />
+    }
+    return "";
+  }
+
   return (
     <>
+      { redirectUrl() }
       <Header />
       <Switch>
         <Route path="/" component={Home} exact />
