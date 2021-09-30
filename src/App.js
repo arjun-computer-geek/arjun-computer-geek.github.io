@@ -18,6 +18,12 @@ const App = () => {
     if(search === '?/projects'){
      return <Redirect to={{ pathname: "/projects"}} />
     }
+    if(search === '?/arch_guide'){
+     return <Redirect to={{ pathname: "/arch_guide"}} />
+    }
+    if(search === '?/important-linux-command'){
+     return <Redirect to={{ pathname: "/important-linux-command"}} />
+    }
     return "";
   }
 
