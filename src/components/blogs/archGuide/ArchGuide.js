@@ -131,7 +131,6 @@ const ArchGuide = () => {
                             <h2>Step 5 : Let's begin the installation</h2>
                         </p>
                         <br />
-                        <p>
                             On the bootup scree, you will be presented with options as shown below. Select the first option - Arch Linux Install medium (x89_64, UEFI) and hit ENTER.
                             <br />
                             <br />
@@ -521,9 +520,10 @@ const ArchGuide = () => {
                                 <Code code={`# exit\n# reboot`} />
                                 <p>
                                     Finally You have installed the Arch Linux.😊
+                                    <br/>
+                                    Login with your credential and enjoy Your Linux with Terminal.
                                 </p>
                             </p>
-                        </p>
                     </div>
                 </div>
             </section>
