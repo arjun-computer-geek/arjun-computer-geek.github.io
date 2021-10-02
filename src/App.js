@@ -10,7 +10,7 @@ import ImportantLinuxCommand from './components/blogs/importLinuxCommand/Importa
 
 const App = () => {
   const {search} = useLocation();
-
+  
   const redirectUrl = () => {
     if(search === '?/blogs'){
      return <Redirect to={{ pathname: "/blogs"}} />

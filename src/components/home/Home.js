@@ -30,7 +30,7 @@ const Home = () => {
                         <p><br/>Hi there!, <br/>
                             I'm familiar with  HTML5 &amp; CSS3, JavaScript, NodeJs, Express, ReactJs, Git, Web Hosting and other Web technologies.<br/><br/>
 
-                            <b>Thank Your!</b><br/><br/>
+                            <b>Thank You!</b><br/><br/>
                         </p>
                     </div>
                 </div>
