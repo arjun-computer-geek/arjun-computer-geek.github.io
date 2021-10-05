@@ -80,14 +80,7 @@ const ImportantLinuxCommand = () => {
                         <br/>
                         <br/>
                         So we can view the content of files we have created.
-                        <Code code={`$ pwd
-/tmp/solar-system/earth
-$ cat file-list.txt
-demo file-list.txt msg.txt msg2.txt user.txt
-$ cat msg.txt
-hey it's a pen to write or dig with.
-$ cat msg2.txt
-easy to create a file`} />
+                        <Code code={`$ pwd \n/tmp/solar-system/earth \n$ cat file-list.txt \ndemo file-list.txt msg.txt \nmsg2.txt user.txt \n$ cat msg.txt \nhey it's a pen to write or dig with. \n$ cat msg2.txt \neasy to create a file`} />
                     </p>
                 </div>
             </section>
