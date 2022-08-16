@@ -13,6 +13,62 @@ const Projects = () => {
                     </div>
                     <div className="all-projects">
                         <Project
+                            liveLink={`https://react-chat-app-arjun.netlify.app/`}
+                            srcLink={`https://github.com/arjun-computer-geek/react_chat_app.git`}
+                            heading1={`React Chat App`}
+                            heading2={`Made with ReactJS, socket.io and express`}
+                            para={`You can chat globally.`}
+                            imgsrc={`./img/reactchatapp.png`}
+                        />
+                        <Project
+                            liveLink={`https://fabelleui.netlify.app/`}
+                            srcLink={`https://github.com/arjun-computer-geek/fabelle-ui.git`}
+                            heading1={`Fabelle UI`}
+                            heading2={`Made with HTML, CSS and JS`}
+                            para={`This ia a component Library like bootstrap.`}
+                            imgsrc={`./img/fabelleui.png`}
+                        />
+                        <Project
+                            liveLink={`https://fabtube.netlify.app/`}
+                            srcLink={`https://github.com/arjun-computer-geek/fabtube.git`}
+                            heading1={`Fabtube`}
+                            heading2={`Made with React, contextAPI, and MirajJs`}
+                            para={`This App is very similar to the YouTube.`}
+                            imgsrc={`./img/fabtube.png`}
+                        />
+                        <Project
+                            liveLink={`https://fab-linkedin.netlify.app/`}
+                            srcLink={`https://github.com/arjun-computer-geek/fab-linkedin.git`}
+                            heading1={`Fab LinkedIn`}
+                            heading2={`Made with React, Redux-toolkit, styled component, firebase`}
+                            para={`This is social media plateform like linkedIn`}
+                            imgsrc={`./img/fablinkedin.png`}
+                        />
+                        <Project
+                            liveLink={`https://fabelle-learn-react.netlify.app/`}
+                            srcLink={`https://github.com/arjun-computer-geek/fabelle-learn-react.git`}
+                            heading1={`Fabelle Learn`}
+                            heading2={`Made with React, ContextAPI, css, Express, Mongodb`}
+                            para={`This is Ecommerce liek app for selling courses`}
+                            imgsrc={`./img/fabellelearn.png`}
+                        />
+                        <Project
+                            liveLink={`https://arjun-computer-geek.github.io/react-calculator/`}
+                            srcLink={`https://github.com/arjun-computer-geek/react-calculator.git`}
+                            heading1={`Calculator`}
+                            heading2={`Made with React, JavaScript`}
+                            para={`It can perform basic operation of calculas`}
+                            imgsrc={`./img/calculator.png`}
+                        />
+                        <Project
+                            liveLink={`https://fabelle-quiz.netlify.app/`}
+                            srcLink={`https://github.com/arjun-computer-geek/fabelle-quiz.git`}
+                            heading1={`Fabelle Learn`}
+                            heading2={`Made with HTML, CSS, JS`}
+                            para={`A Quiz app`}
+                            imgsrc={`./img/fabellequiz.png`}
+                        />
+                        <Project
                             liveLink={`https://distracted-noether-a6fab6.netlify.app/`}
                             srcLink={`https://github.com/arjun-computer-geek/stock-app.git`}
                             heading1={`Stock App`}
