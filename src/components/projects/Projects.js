@@ -18,7 +18,7 @@ const Projects = () => {
                             heading1={`React Chat App`}
                             heading2={`Made with ReactJS, socket.io and express`}
                             para={`You can chat globally.`}
-                            imgsrc={`./img/reactchatapp.png`}
+                            imgsrc={`./img/reactchatapp.PNG`}
                         />
                         <Project
                             liveLink={`https://fabelleui.netlify.app/`}
@@ -26,7 +26,7 @@ const Projects = () => {
                             heading1={`Fabelle UI`}
                             heading2={`Made with HTML, CSS and JS`}
                             para={`This ia a component Library like bootstrap.`}
-                            imgsrc={`./img/fabelleui.png`}
+                            imgsrc={`./img/fabelleui.PNG`}
                         />
                         <Project
                             liveLink={`https://fabtube.netlify.app/`}
@@ -34,7 +34,7 @@ const Projects = () => {
                             heading1={`Fabtube`}
                             heading2={`Made with React, contextAPI, and MirajJs`}
                             para={`This App is very similar to the YouTube.`}
-                            imgsrc={`./img/fabtube.png`}
+                            imgsrc={`./img/fabtube.PNG`}
                         />
                         <Project
                             liveLink={`https://fab-linkedin.netlify.app/`}
@@ -42,7 +42,7 @@ const Projects = () => {
                             heading1={`Fab LinkedIn`}
                             heading2={`Made with React, Redux-toolkit, styled component, firebase`}
                             para={`This is social media plateform like linkedIn`}
-                            imgsrc={`./img/fablinkedin.png`}
+                            imgsrc={`./img/fablinkedin.PNG`}
                         />
                         <Project
                             liveLink={`https://fabelle-learn-react.netlify.app/`}
@@ -50,7 +50,7 @@ const Projects = () => {
                             heading1={`Fabelle Learn`}
                             heading2={`Made with React, ContextAPI, css, Express, Mongodb`}
                             para={`This is Ecommerce liek app for selling courses`}
-                            imgsrc={`./img/fabellelearn.png`}
+                            imgsrc={`./img/fabellelearn.PNG`}
                         />
                         <Project
                             liveLink={`https://arjun-computer-geek.github.io/react-calculator/`}
@@ -58,7 +58,7 @@ const Projects = () => {
                             heading1={`Calculator`}
                             heading2={`Made with React, JavaScript`}
                             para={`It can perform basic operation of calculas`}
-                            imgsrc={`./img/calculator.png`}
+                            imgsrc={`./img/calculator.PNG`}
                         />
                         <Project
                             liveLink={`https://fabelle-quiz.netlify.app/`}
@@ -66,7 +66,7 @@ const Projects = () => {
                             heading1={`Fabelle Learn`}
                             heading2={`Made with HTML, CSS, JS`}
                             para={`A Quiz app`}
-                            imgsrc={`./img/fabellequiz.png`}
+                            imgsrc={`./img/fabellequiz.PNG`}
                         />
                         <Project
                             liveLink={`https://distracted-noether-a6fab6.netlify.app/`}
