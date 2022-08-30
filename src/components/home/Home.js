@@ -31,6 +31,8 @@ const Home = () => {
                             I'm familiar with  HTML5 &amp; CSS3, JavaScript, NodeJs, Express, ReactJs, Git, Web Hosting and other Web technologies.<br/><br/>
 
                             <b>Thank You!</b><br/><br/>
+
+                            <a href="/Arjun Kumar resume.pdf" type="button" title="" download>Download CV</a>
                         </p>
                     </div>
                 </div>
