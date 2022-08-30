@@ -74,7 +74,7 @@ const Home = () => {
                             <div className="icon"><i className="fa fa-phone-square fa-5x" aria-hidden="true"></i></div>
                             <div className="contact-info">
                                 <h2>Phone</h2>
-                                <h3>+91 9608544916</h3>
+                                <h3>+91 9308184693</h3>
                                 
                             </div>
                         </div>
