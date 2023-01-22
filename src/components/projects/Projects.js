@@ -12,6 +12,14 @@ const Projects = () => {
                         <h1 className="section-title">MY <span> PROJECTS</span></h1>
                     </div>
                     <div className="all-projects">
+                    <Project
+                            liveLink={`fab-link-shortner.netlify.app`}
+                            srcLink={`https://github.com/arjun-computer-geek/link-shortener-website.git`}
+                            heading1={`Vue Link Shortner`}
+                            heading2={`Made with Vue Js and bitly api`}
+                            para={`You can short your link like bit.ly.`}
+                            imgsrc={`./img/link-shortner.PNG`}
+                        />
                         <Project
                             liveLink={`https://react-chat-app-arjun.netlify.app/`}
                             srcLink={`https://github.com/arjun-computer-geek/react_chat_app.git`}
