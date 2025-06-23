@@ -14,23 +14,23 @@ export const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="animate-fade-in">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="block text-foreground mb-2">Hi, I'm</span>
-            <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent">
+            <span className="block text-foreground mb-2">Hi, I'm  <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent">
               Arjun
-            </span>
+            </span></span>
+
           </h1>
-          
+
           <div className="text-xl md:text-2xl text-muted-foreground mb-8 animate-slide-in-right delay-300">
             <p className="mb-2">Full Stack Developer</p>
             <p className="text-base md:text-lg max-w-2xl mx-auto">
-              Passionate about creating innovative web solutions with modern technologies. 
+              Passionate about creating innovative web solutions with modern technologies.
               I love turning complex problems into simple, beautiful designs.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in delay-500">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0"
             >
               <a href="#projects" className="flex items-center gap-2">
@@ -38,8 +38,8 @@ export const Hero = () => {
                 <ArrowDown className="w-4 h-4" />
               </a>
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="lg"
               className="border-purple-500/50 hover:bg-purple-500/10"
             >
@@ -48,24 +48,24 @@ export const Hero = () => {
           </div>
 
           <div className="flex justify-center gap-6 animate-fade-in delay-700">
-            <a 
-              href="https://github.com/arjun-computer-geek" 
-              target="_blank" 
+            <a
+              href="https://github.com/arjun-computer-geek"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-purple-400 transition-colors p-2 hover:scale-110 transform duration-200"
             >
               <Github className="w-6 h-6" />
             </a>
-            <a 
-              href="https://linkedin.com/in/arjun" 
-              target="_blank" 
+            <a
+              href="https://linkedin.com/in/arjun-computer-geek"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-purple-400 transition-colors p-2 hover:scale-110 transform duration-200"
             >
               <Linkedin className="w-6 h-6" />
             </a>
-            <a 
-              href="mailto:arjun@example.com"
+            <a
+              href="mailto:arjun2000raj@gmail.com"
               className="text-muted-foreground hover:text-purple-400 transition-colors p-2 hover:scale-110 transform duration-200"
             >
               <Mail className="w-6 h-6" />

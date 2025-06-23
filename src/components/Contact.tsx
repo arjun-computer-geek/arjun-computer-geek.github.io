@@ -1,4 +1,3 @@
-
 import { Mail, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -17,23 +16,23 @@ export const Contact = () => {
           <div className="mb-8">
             <h3 className="text-2xl font-semibold mb-4">Ready to Start a Project?</h3>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              I'm always excited to work on new projects and collaborate with amazing people. 
+              I'm always excited to work on new projects and collaborate with amazing people.
               Whether you have a project in mind or just want to chat about tech, feel free to reach out!
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0"
             >
-              <a href="mailto:arjun@example.com" className="flex items-center gap-2">
+              <a href="mailto:arjun2000raj@gmail.com" className="flex items-center gap-2">
                 <Mail className="w-5 h-5" />
                 Send Email
               </a>
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="lg"
               className="border-purple-500/50 hover:bg-purple-500/10"
             >
@@ -44,24 +43,24 @@ export const Contact = () => {
           </div>
 
           <div className="flex justify-center gap-6">
-            <a 
-              href="https://github.com/arjun-computer-geek" 
-              target="_blank" 
+            <a
+              href="https://github.com/arjun-computer-geek"
+              target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 hover:scale-110 transition-all duration-200"
             >
               <Github className="w-6 h-6" />
             </a>
-            <a 
-              href="https://linkedin.com/in/arjun" 
-              target="_blank" 
+            <a
+              href="https://linkedin.com/in/arjun-computer-geek"
+              target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 hover:scale-110 transition-all duration-200"
             >
               <Linkedin className="w-6 h-6" />
             </a>
-            <a 
-              href="mailto:arjun@example.com"
+            <a
+              href="mailto:arjun2000raj@gmail.com"
               className="p-3 rounded-full bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 hover:scale-110 transition-all duration-200"
             >
               <Mail className="w-6 h-6" />

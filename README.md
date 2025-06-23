@@ -4,6 +4,26 @@
 
 **URL**: https://lovable.dev/projects/3476d67f-2bf2-4381-a33b-6598a9c03239
 
+## Features
+
+### 🚀 GitHub Integration
+
+This portfolio now automatically fetches and displays data from GitHub:
+
+- **Dynamic Experience Calculation**: Automatically calculates experience from September 2023 to present
+- **Real-time Repository Data**: Fetches all public repositories with stats (stars, forks, languages)
+- **Live Project Count**: Shows actual number of completed projects from GitHub
+- **GitHub Stats Dashboard**: Displays total stars, forks, and languages used
+- **Featured Projects**: Automatically showcases top repositories based on engagement
+- **Search & Filter**: Full repository browsing with search and language filtering
+
+### 🛠️ Technical Features
+
+- **React Query**: Efficient data fetching with caching and error handling
+- **TypeScript**: Full type safety for GitHub API responses
+- **Responsive Design**: Beautiful UI that works on all devices
+- **Real-time Updates**: Data refreshes automatically every 5 minutes
+
 ## How can I edit this code?
 
 There are several ways of editing your application.
@@ -59,6 +79,31 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+- React Query (TanStack Query)
+- GitHub API Integration
+
+## GitHub Integration Details
+
+### API Endpoints Used
+
+- `GET /users/arjun-computer-geek/repos` - Fetch all repositories
+- `GET /repos/{owner}/{repo}/topics` - Fetch repository topics
+
+### Experience Calculation
+
+Experience is automatically calculated from September 1, 2023 to the current date, providing accurate year/month breakdown.
+
+### Data Caching
+
+- Repository data: 5 minutes stale time, 30 minutes cache
+- Experience calculation: 1 hour stale time, 24 hours cache
+- Automatic retry with exponential backoff
+
+### Error Handling
+
+- Graceful fallbacks for API failures
+- Loading states for better UX
+- Error boundaries for component-level error handling
 
 ## How can I deploy this project?
 
@@ -68,6 +113,14 @@ Simply open [Lovable](https://lovable.dev/projects/3476d67f-2bf2-4381-a33b-6598a
 
 Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Recent Updates
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### GitHub Integration (Latest)
+
+- ✅ Automatic experience calculation from September 2023
+- ✅ Real-time GitHub repository fetching
+- ✅ Dynamic project count and stats
+- ✅ Featured projects showcase
+- ✅ Search and filter functionality
+- ✅ Responsive design with loading states
+- ✅ Error handling and fallbacks

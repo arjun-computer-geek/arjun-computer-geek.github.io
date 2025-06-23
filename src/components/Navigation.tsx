@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocation } from "react-router-dom";
@@ -22,14 +21,14 @@ export const Navigation = () => {
     { name: "About", href: location.pathname === "/" ? "#about" : "/#about" },
     { name: "Skills", href: location.pathname === "/" ? "#skills" : "/#skills" },
     { name: "Projects", href: "/projects" },
+    { name: "GitHub", href: "/github" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: location.pathname === "/" ? "#contact" : "/#contact" },
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? "glass backdrop-blur-md" : "bg-transparent"
-    }`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "glass backdrop-blur-md" : "bg-transparent"
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <a href="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">

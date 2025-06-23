@@ -1,32 +1,35 @@
+import { useGitHubStats } from "@/hooks/use-github";
+import { Loader2 } from "lucide-react";
 
 export const Skills = () => {
+  const { data: stats, isLoading } = useGitHubStats();
+
   const skillCategories = [
     {
       title: "Frontend",
       skills: [
-        { name: "React", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "Next.js", level: 80 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "Vue.js", level: 75 },
+        { name: "React", level: 100 },
+        { name: "TypeScript", level: 90 },
+        { name: "Next.js", level: 100 },
+        { name: "Tailwind CSS", level: 100 },
+        { name: "Svelte", level: 100 },
       ]
     },
     {
       title: "Backend",
       skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Python", level: 80 },
-        { name: "Express.js", level: 85 },
-        { name: "FastAPI", level: 75 },
-        { name: "GraphQL", level: 70 },
+        { name: "Node.js", level: 90 },
+        { name: "Python", level: 20 },
+        { name: "Express.js", level: 95 },
+        { name: "GraphQL", level: 75 },
       ]
     },
     {
       title: "Database & Tools",
       skills: [
-        { name: "MongoDB", level: 80 },
+        { name: "MongoDB", level: 90 },
         { name: "PostgreSQL", level: 75 },
-        { name: "Docker", level: 70 },
+        { name: "Docker", level: 80 },
         { name: "Git", level: 90 },
         { name: "AWS", level: 65 },
       ]
@@ -57,9 +60,9 @@ export const Skills = () => {
                       <span className="text-xs text-muted-foreground">{skill.level}%</span>
                     </div>
                     <div className="w-full bg-secondary rounded-full h-2">
-                      <div 
+                      <div
                         className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-1000 ease-out"
-                        style={{ 
+                        style={{
                           width: `${skill.level}%`,
                           animationDelay: `${(categoryIndex * 3 + skillIndex) * 100}ms`
                         }}
@@ -75,22 +78,69 @@ export const Skills = () => {
         {/* GitHub Stats */}
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-semibold mb-8 text-purple-400">GitHub Stats</h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="glass rounded-xl p-6">
-              <img 
-                src="https://github-readme-stats.vercel.app/api?username=arjun-computer-geek&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117"
-                alt="GitHub Stats"
-                className="w-full rounded-lg"
-              />
+
+          {isLoading ? (
+            <div className="flex justify-center">
+              <Loader2 className="w-8 h-8 animate-spin text-purple-400" />
             </div>
-            <div className="glass rounded-xl p-6">
-              <img 
-                src="https://github-readme-stats.vercel.app/api/top-langs/?username=arjun-computer-geek&layout=compact&theme=radical&hide_border=true&bg_color=0D1117"
-                alt="Top Languages"
-                className="w-full rounded-lg"
-              />
-            </div>
-          </div>
+          ) : (
+            <>
+              {/* Dynamic GitHub Stats Cards */}
+              {stats && (
+                <div className="grid md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
+                  <div className="glass rounded-xl p-6 text-center">
+                    <div className="text-3xl font-bold text-purple-400 mb-2">{stats.totalRepos}</div>
+                    <div className="text-sm text-muted-foreground">Total Repositories</div>
+                  </div>
+                  <div className="glass rounded-xl p-6 text-center">
+                    <div className="text-3xl font-bold text-yellow-400 mb-2">{stats.totalStars}</div>
+                    <div className="text-sm text-muted-foreground">Total Stars</div>
+                  </div>
+                  <div className="glass rounded-xl p-6 text-center">
+                    <div className="text-3xl font-bold text-blue-400 mb-2">{stats.totalForks}</div>
+                    <div className="text-sm text-muted-foreground">Total Forks</div>
+                  </div>
+                  <div className="glass rounded-xl p-6 text-center">
+                    <div className="text-3xl font-bold text-green-400 mb-2">{Object.keys(stats.topLanguages).length}</div>
+                    <div className="text-sm text-muted-foreground">Languages Used</div>
+                  </div>
+                </div>
+              )}
+
+              {/* Top Languages from GitHub */}
+              {stats && Object.keys(stats.topLanguages).length > 0 && (
+                <div className="glass rounded-xl p-8 max-w-4xl mx-auto mb-8">
+                  <h4 className="text-xl font-semibold mb-6 text-purple-400">Top Languages from GitHub</h4>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {Object.entries(stats.topLanguages).slice(0, 8).map(([language, count]) => (
+                      <div key={language} className="flex justify-between items-center p-3 rounded-lg bg-purple-500/10 border border-purple-500/20">
+                        <span className="font-medium text-purple-300">{language}</span>
+                        <span className="text-sm text-muted-foreground">{count} repos</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* GitHub Stats Images */}
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div className="glass rounded-xl p-6">
+                  <img
+                    src="https://github-readme-stats.vercel.app/api?username=arjun-computer-geek&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117"
+                    alt="GitHub Stats"
+                    className="w-full rounded-lg"
+                  />
+                </div>
+                <div className="glass rounded-xl p-6">
+                  <img
+                    src="https://github-readme-stats.vercel.app/api/top-langs/?username=arjun-computer-geek&layout=compact&theme=radical&hide_border=true&bg_color=0D1117"
+                    alt="Top Languages"
+                    className="w-full rounded-lg"
+                  />
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>
