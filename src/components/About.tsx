@@ -1,0 +1,55 @@
+
+export const About = () => {
+  return (
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            About Me
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
+        </div>
+
+        <div className="glass rounded-2xl p-8 md:p-12 glow-border">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                I'm a passionate Full Stack Developer with a love for creating innovative web solutions. 
+                My journey in tech started with curiosity and has evolved into a deep passion for 
+                building applications that make a difference.
+              </p>
+              
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                I specialize in modern web technologies and enjoy working on both frontend and backend 
+                development. When I'm not coding, you can find me exploring new technologies, 
+                contributing to open source projects, or sharing knowledge with the developer community.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                <div className="text-center p-4 rounded-lg bg-purple-500/10 border border-purple-500/20">
+                  <div className="text-2xl font-bold text-purple-400">2+</div>
+                  <div className="text-sm text-muted-foreground">Years Experience</div>
+                </div>
+                <div className="text-center p-4 rounded-lg bg-pink-500/10 border border-pink-500/20">
+                  <div className="text-2xl font-bold text-pink-400">15+</div>
+                  <div className="text-sm text-muted-foreground">Projects Completed</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="w-64 h-64 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
+                  <div className="w-48 h-48 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-4xl font-bold text-white">
+                    A
+                  </div>
+                </div>
+                <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-xl animate-glow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
