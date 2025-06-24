@@ -23,22 +23,22 @@ export const Blog = () => {
           {featuredPosts.map((post) => (
             <article key={post.id} className="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300 glow-border">
               <div className="relative mb-6 overflow-hidden rounded-xl">
-                <img 
-                  src={post.image} 
+                <img
+                  src={post.image}
                   alt={post.title}
                   className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
-              
+
               <div className="space-y-4">
                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
-                    {new Date(post.date).toLocaleDateString('en-US', { 
-                      year: 'numeric', 
-                      month: 'short', 
-                      day: 'numeric' 
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric'
                     })}
                   </div>
                   <div className="flex items-center gap-1">
@@ -46,15 +46,15 @@ export const Blog = () => {
                     {post.readingTime} min read
                   </div>
                 </div>
-                
+
                 <h3 className="text-xl font-semibold text-purple-400 line-clamp-2">
                   {post.title}
                 </h3>
-                
+
                 <p className="text-muted-foreground leading-relaxed line-clamp-3">
                   {post.summary}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {post.tags.slice(0, 3).map((tag) => (
                     <span key={tag} className="px-3 py-1 text-xs rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">
@@ -67,10 +67,10 @@ export const Blog = () => {
                     </span>
                   )}
                 </div>
-                
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+
+                <Button
+                  variant="outline"
+                  size="sm"
                   className="border-purple-500/50 hover:bg-purple-500/10 w-full group"
                 >
                   Read More
@@ -82,8 +82,8 @@ export const Blog = () => {
         </div>
 
         <div className="text-center">
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
           >
             View All Posts

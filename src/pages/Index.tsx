@@ -7,6 +7,7 @@ import { Blog } from "@/components/Blog";
 import { Contact } from "@/components/Contact";
 import { Navigation } from "@/components/Navigation";
 import { useAnchorScroll } from "@/hooks/use-anchor-scroll";
+import DevToBlogFeed from '../components/DevToBlogFeed';
 
 const Index = () => {
   useAnchorScroll();
@@ -20,7 +21,12 @@ const Index = () => {
         <Skills />
         <Projects />
         <GitHubProjects />
-        <Blog />
+        <div className="my-16">
+          <DevToBlogFeed limit={3} />
+          <div className="flex justify-center mt-8">
+            <a href="/blog" className="px-6 py-2 rounded-lg bg-[#e879f9] text-white font-semibold hover:bg-[#d946ef] transition-colors">View All Posts →</a>
+          </div>
+        </div>
         <Contact />
       </main>
     </div>
