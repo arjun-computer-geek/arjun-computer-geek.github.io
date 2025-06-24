@@ -43,20 +43,20 @@
           return s.replace(/~and~/g, '&')
         }).join('?');
 
-        // For HashRouter, we need to convert the path to a hash
-        // But only for actual routes, not for anchor links
+        // Handle different types of paths
         var path = decoded.replace(/^\//, ''); // Remove leading slash
-        if (path && !path.startsWith('#')) {
-          // Only apply redirect for actual routes (not anchor links)
-          var routePath = path.split('#')[0]; // Remove any existing hash
-          if (routePath && routePath !== '') {
-            window.history.replaceState(null, null, l.pathname + '#' + routePath);
-          } else {
-            window.history.replaceState(null, null, l.pathname);
-          }
+
+        if (path && path.startsWith('#')) {
+          // This is an anchor link (e.g., #about, #skills)
+          // Just restore the original URL with the anchor
+          window.history.replaceState(null, null, l.pathname + path);
+        } else if (path && path !== '') {
+          // This is a page route (e.g., projects, blog, github)
+          // Convert to hash route for HashRouter
+          window.history.replaceState(null, null, l.pathname + '#' + path);
         } else {
-          // For anchor links, just restore the original URL
-          window.history.replaceState(null, null, l.pathname + decoded);
+          // Empty path, just go to home
+          window.history.replaceState(null, null, l.pathname);
         }
       }
     }(window.location))
