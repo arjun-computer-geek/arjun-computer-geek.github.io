@@ -6,8 +6,11 @@ import { GitHubProjects } from "@/components/GitHubProjects";
 import { Blog } from "@/components/Blog";
 import { Contact } from "@/components/Contact";
 import { Navigation } from "@/components/Navigation";
+import { useAnchorScroll } from "@/hooks/use-anchor-scroll";
 
 const Index = () => {
+  useAnchorScroll();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-purple-900/20">
       <Navigation />
