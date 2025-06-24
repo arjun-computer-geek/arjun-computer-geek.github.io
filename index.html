@@ -42,22 +42,9 @@
         var decoded = l.search.slice(1).split('&').map(function (s) {
           return s.replace(/~and~/g, '&')
         }).join('?');
-
-        // Handle different types of paths
-        var path = decoded.replace(/^\//, ''); // Remove leading slash
-
-        if (path && path.startsWith('#')) {
-          // This is an anchor link (e.g., #about, #skills)
-          // Just restore the original URL with the anchor
-          window.history.replaceState(null, null, l.pathname + path);
-        } else if (path && path !== '') {
-          // This is a page route (e.g., projects, blog, github)
-          // Convert to hash route for HashRouter
-          window.history.replaceState(null, null, l.pathname + '#' + path);
-        } else {
-          // Empty path, just go to home
-          window.history.replaceState(null, null, l.pathname);
-        }
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
       }
     }(window.location))
   </script>
