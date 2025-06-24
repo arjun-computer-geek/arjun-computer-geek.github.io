@@ -8,30 +8,36 @@ export const Skills = () => {
     {
       title: "Frontend",
       skills: [
-        { name: "React", level: 100 },
+        { name: "React", level: 95 },
+        { name: "Next.js", level: 90 },
+        { name: "React Native", level: 85 },
         { name: "TypeScript", level: 90 },
-        { name: "Next.js", level: 100 },
-        { name: "Tailwind CSS", level: 100 },
-        { name: "Svelte", level: 100 },
+        { name: "Tailwind CSS", level: 95 },
+        { name: "Material UI", level: 90 },
+        { name: "Styled Components", level: 85 },
       ]
     },
     {
-      title: "Backend",
+      title: "Backend & State",
       skills: [
         { name: "Node.js", level: 90 },
-        { name: "Python", level: 20 },
         { name: "Express.js", level: 95 },
-        { name: "GraphQL", level: 75 },
+        { name: "Redux", level: 85 },
+        { name: "Zustand", level: 80 },
+        { name: "Socket.io", level: 85 },
+        { name: "JWT", level: 90 },
       ]
     },
     {
-      title: "Database & Tools",
+      title: "Database & DevOps",
       skills: [
         { name: "MongoDB", level: 90 },
-        { name: "PostgreSQL", level: 75 },
+        { name: "MySQL", level: 80 },
+        { name: "Firebase", level: 85 },
         { name: "Docker", level: 80 },
-        { name: "Git", level: 90 },
-        { name: "AWS", level: 65 },
+        { name: "AWS", level: 75 },
+        { name: "Netlify", level: 85 },
+        { name: "Vercel", level: 90 },
       ]
     }
   ];

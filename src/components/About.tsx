@@ -24,15 +24,16 @@ export const About = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a passionate Full Stack Developer with a love for creating innovative web solutions.
-                My journey in tech started with curiosity and has evolved into a deep passion for
-                building applications that make a difference.
+                I'm a passionate Full Stack Developer with over 2 years of experience in creating innovative web solutions.
+                My journey in tech started with a web development bootcamp and has evolved into a deep passion for
+                building applications that make a difference in the digital world.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I specialize in modern web technologies and enjoy working on both frontend and backend
-                development. When I'm not coding, you can find me exploring new technologies,
-                contributing to open source projects, or sharing knowledge with the developer community.
+                I specialize in modern web technologies including React, Next.js, Node.js, and MongoDB. I have experience
+                in developing chat applications, e-commerce platforms, and internationalization features. When I'm not coding,
+                you can find me exploring new technologies, contributing to open source projects, or sharing knowledge
+                with the developer community.
               </p>
 
               <div className="grid grid-cols-2 gap-4 mt-8">

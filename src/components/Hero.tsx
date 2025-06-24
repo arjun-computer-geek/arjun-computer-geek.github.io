@@ -1,4 +1,3 @@
-
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -23,8 +22,8 @@ export const Hero = () => {
           <div className="text-xl md:text-2xl text-muted-foreground mb-8 animate-slide-in-right delay-300">
             <p className="mb-2">Full Stack Developer</p>
             <p className="text-base md:text-lg max-w-2xl mx-auto">
-              Passionate about creating innovative web solutions with modern technologies.
-              I love turning complex problems into simple, beautiful designs.
+              Passionate about creating innovative web solutions with React, Next.js, and Node.js.
+              I love building chat applications, e-commerce platforms, and internationalization features.
             </p>
           </div>
 
