@@ -34,6 +34,17 @@ export const useFeaturedProjects = () => {
   });
 };
 
+export const usePinnedProjects = () => {
+  return useQuery({
+    queryKey: ['pinned-projects'],
+    queryFn: () => GitHubService.getPinnedProjects(),
+    staleTime: 1000 * 60 * 5, // 5 minutes
+    gcTime: 1000 * 60 * 30, // 30 minutes
+    retry: 3,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+  });
+};
+
 export const useExperience = () => {
   return useQuery({
     queryKey: ['experience'],

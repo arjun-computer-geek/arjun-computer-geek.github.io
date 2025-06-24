@@ -1,11 +1,11 @@
 import { Github, Star, GitFork, ExternalLink, Calendar, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useFeaturedProjects } from "@/hooks/use-github";
+import { usePinnedProjects } from "@/hooks/use-github";
 import { Loader2 } from "lucide-react";
 
 export const GitHubProjects = () => {
-    const { data: projects, isLoading, error } = useFeaturedProjects();
+    const { data: projects, isLoading, error } = usePinnedProjects();
 
     if (isLoading) {
         return (
@@ -17,7 +17,7 @@ export const GitHubProjects = () => {
                         </h2>
                         <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-4"></div>
                         <p className="text-muted-foreground max-w-2xl mx-auto">
-                            My latest projects from GitHub, automatically updated
+                            My featured projects from GitHub, automatically updated
                         </p>
                     </div>
 
@@ -58,7 +58,7 @@ export const GitHubProjects = () => {
                     </h2>
                     <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-4"></div>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
-                        My latest projects from GitHub, automatically updated
+                        My featured projects from GitHub, automatically updated
                     </p>
                 </div>
 
@@ -139,9 +139,9 @@ export const GitHubProjects = () => {
                         size="lg"
                         className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
                     >
-                        <a href="https://github.com/arjun-computer-geek" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <a href="/github" className="flex items-center gap-2">
                             <Github className="w-5 h-5" />
-                            View All on GitHub
+                            View All Projects
                         </a>
                     </Button>
                 </div>

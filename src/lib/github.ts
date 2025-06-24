@@ -1,3 +1,5 @@
+import { PINNED_REPOSITORIES, PINNED_TOPICS } from '@/config/pinned-repos';
+
 export interface GitHubRepo {
   id: number;
   name: string;
@@ -15,6 +17,7 @@ export interface GitHubRepo {
   fork: boolean;
   archived: boolean;
   private: boolean;
+  isPinned?: boolean;
 }
 
 export interface GitHubStats {
@@ -77,30 +80,48 @@ export class GitHubService {
     }
   }
 
+  private static isPinnedRepository(repo: GitHubRepo): boolean {
+    if (PINNED_REPOSITORIES.includes(repo.name)) {
+      return true;
+    }
+    
+    if (repo.topics && repo.topics.some(topic => PINNED_TOPICS.includes(topic))) {
+      return true;
+    }
+    
+    return false;
+  }
+
   static async getUserRepos(username: string = USERNAME): Promise<GitHubRepo[]> {
     const url = `${GITHUB_API_BASE}/users/${username}/repos?per_page=100&sort=updated`;
     const repos = await this.fetchWithRateLimit<GitHubApiRepo[]>(url);
     
     return repos
       .filter((repo: GitHubApiRepo) => !repo.fork && !repo.archived && !repo.private)
-      .map((repo: GitHubApiRepo) => ({
-        id: repo.id,
-        name: repo.name,
-        full_name: repo.full_name,
-        description: repo.description,
-        html_url: repo.html_url,
-        homepage: repo.homepage,
-        language: repo.language,
-        stargazers_count: repo.stargazers_count,
-        forks_count: repo.forks_count,
-        created_at: repo.created_at,
-        updated_at: repo.updated_at,
-        pushed_at: repo.pushed_at,
-        topics: repo.topics || [],
-        fork: repo.fork,
-        archived: repo.archived,
-        private: repo.private
-      }));
+      .map((repo: GitHubApiRepo) => {
+        const mappedRepo: GitHubRepo = {
+          id: repo.id,
+          name: repo.name,
+          full_name: repo.full_name,
+          description: repo.description,
+          html_url: repo.html_url,
+          homepage: repo.homepage,
+          language: repo.language,
+          stargazers_count: repo.stargazers_count,
+          forks_count: repo.forks_count,
+          created_at: repo.created_at,
+          updated_at: repo.updated_at,
+          pushed_at: repo.pushed_at,
+          topics: repo.topics || [],
+          fork: repo.fork,
+          archived: repo.archived,
+          private: repo.private
+        };
+        
+        mappedRepo.isPinned = this.isPinnedRepository(mappedRepo);
+        
+        return mappedRepo;
+      });
   }
 
   static async getRepoTopics(username: string = USERNAME, repoName: string): Promise<string[]> {
@@ -174,6 +195,19 @@ export class GitHubService {
       firstCommitDate,
       lastCommitDate
     };
+  }
+
+  static async getPinnedProjects(): Promise<GitHubRepo[]> {
+    const repos = await this.getUserRepos();
+    
+    // Return only pinned repositories, sorted by stars and forks
+    return repos
+      .filter(repo => repo.isPinned)
+      .sort((a, b) => {
+        const aScore = (a.stargazers_count * 2) + a.forks_count;
+        const bScore = (b.stargazers_count * 2) + b.forks_count;
+        return bScore - aScore;
+      });
   }
 
   static async getFeaturedProjects(): Promise<GitHubRepo[]> {
