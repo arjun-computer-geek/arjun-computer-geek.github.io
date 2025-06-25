@@ -8,12 +8,12 @@ export const Skills = () => {
     {
       title: "Frontend",
       skills: [
-        { name: "React", level: 95 },
-        { name: "Next.js", level: 90 },
-        { name: "React Native", level: 85 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "Material UI", level: 90 },
+        { name: "React", level: 100 },
+        { name: "Next.js", level: 100 },
+        { name: "SvelteKit", level: 100 },
+        { name: "TypeScript", level: 100 },
+        { name: "Tailwind CSS", level: 100 },
+        { name: "Material UI", level: 95 },
         { name: "Styled Components", level: 85 },
       ]
     },
@@ -22,10 +22,10 @@ export const Skills = () => {
       skills: [
         { name: "Node.js", level: 90 },
         { name: "Express.js", level: 95 },
-        { name: "Redux", level: 85 },
-        { name: "Zustand", level: 80 },
-        { name: "Socket.io", level: 85 },
-        { name: "JWT", level: 90 },
+        { name: "Redux", level: 95 },
+        { name: "Zustand", level: 95 },
+        { name: "Socket.io", level: 90 },
+        { name: "JWT", level: 100 },
       ]
     },
     {

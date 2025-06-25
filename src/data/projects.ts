@@ -9,32 +9,41 @@ export interface Project {
   live: string;
   featured: boolean;
   category: string;
+  private?: boolean;
+  company?: string;
+  companyUrl?: string;
 }
 
 export const projects: Project[] = [
   {
-    id: "next-internationalization",
-    title: "Next.js Internationalization",
-    description: "A Next.js Internationalization demo website using ni18n and react-i18next for multi-language support.",
-    longDescription: "A comprehensive demonstration of internationalization in Next.js applications. Features multiple language support, dynamic language switching, and proper i18n implementation using ni18n and react-i18next libraries.",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop",
-    tech: ["Next.js", "React", "i18n", "react-i18next", "TypeScript"],
-    github: "https://github.com/arjun-computer-geek/next-internationalization",
-    live: "https://next-internationalization-demo.vercel.app",
+    id: "loopedin",
+    title: "LoopedIn",
+    description: "All-in-one tool for collecting feedback, building roadmaps, sharing changelogs and publishing knowledge bases.",
+    longDescription: "Worked on admin page, new public page redesign in SvelteKit and Node.js, implemented SSO, SAML, multi-domain features. Deployed on Heroku using Docker for the new public page deployment. Implemented Upstash QStash and Redis, Bull and sockets for event detection.",
+    image: "/loopedin.png?w=500&h=300&fit=crop",
+    tech: ["SvelteKit", "Node.js", "SSO", "SAML", "Docker", "Heroku", "Redis", "Bull", "Socket.io", "Upstash QStash"],
+    github: "#",
+    live: "https://app.loopedin.io/",
     featured: true,
-    category: "Frontend"
+    category: "Full Stack",
+    private: true,
+    company: "IIH Global",
+    companyUrl: "https://www.iihglobal.com/"
   },
   {
-    id: "binks-social",
-    title: "Binks Social",
-    description: "A feature-rich social media app with post creation, deletion, and commenting functionality.",
-    longDescription: "Developed and implemented a feature-rich social media app enabling users to create, delete, and comment on posts. Resulted in a 40% increase in daily active users and 25% higher user engagement levels. Built with modern MERN stack technologies.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop",
-    tech: ["Node.js", "MongoDB", "React", "Express", "Socket.io"],
-    github: "https://github.com/arjun-computer-geek/binks-social",
-    live: "https://binks-social.vercel.app",
+    id: "zyapaar",
+    title: "Zyapaar",
+    description: "India's Largest Business Networking Platform for MSMEs - B2B platform connecting buyers, suppliers, traders & service providers across the country.",
+    longDescription: "Led the development of India's largest B2B networking platform for MSMEs. Built with Next.js, Redux, and StompJS for real-time chat features. The platform connects 70,000+ sellers, 50,000+ buyers, and 6,00,000+ products across India, providing verified business networking and digital identity for businesses.",
+    image: "/zyapaar.png?w=500&h=300&fit=crop",
+    tech: ["Next.js", "Redux", "StompJS", "Socket.io", "B2B Platform", "MSME", "Real-time Chat"],
+    github: "#",
+    live: "https://zyapaar.com/",
     featured: true,
-    category: "Full Stack"
+    category: "Frontend",
+    private: true,
+    company: "Zyapaar",
+    companyUrl: "https://in.linkedin.com/company/zyapaar-b2b-trade-marketplace"
   },
   {
     id: "ecommerce-backend",
@@ -46,7 +55,7 @@ export const projects: Project[] = [
     github: "https://github.com/arjun-computer-geek/ecommerce-backend",
     live: "https://ecommerce-backend-demo.vercel.app",
     featured: false,
-    category: "Backend"
+    category: "Frontend"
   },
   {
     id: "fab-tube",
