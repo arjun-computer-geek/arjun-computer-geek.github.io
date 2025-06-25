@@ -17,12 +17,47 @@ interface NavigatorStandalone extends Navigator {
     standalone?: boolean;
 }
 
+const PWA_PROMPT_KEY = 'pwa-prompt-dismissed';
+const REMINDER_DELAY_DAYS = 2; // Show again after 2 days
+
 export function PWAInstallPrompt() {
     const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
     const [showPrompt, setShowPrompt] = useState(false);
     const [isInstalled, setIsInstalled] = useState(false);
     const [isIOS, setIsIOS] = useState(false);
     const [isStandalone, setIsStandalone] = useState(false);
+
+    // Check if prompt was recently dismissed
+    const isPromptDismissed = (): boolean => {
+        try {
+            const dismissed = localStorage.getItem(PWA_PROMPT_KEY);
+            if (!dismissed) return false;
+
+            const dismissedDate = new Date(dismissed);
+            const now = new Date();
+            const daysDiff = (now.getTime() - dismissedDate.getTime()) / (1000 * 60 * 60 * 24);
+
+            return daysDiff < REMINDER_DELAY_DAYS;
+        } catch (error) {
+            console.warn('Failed to check PWA prompt dismissal:', error);
+            return false;
+        }
+    };
+
+    // Mark prompt as dismissed
+    const markPromptDismissed = (type: 'remind-later' | 'got-it' = 'remind-later') => {
+        try {
+            const now = new Date();
+            localStorage.setItem(PWA_PROMPT_KEY, now.toISOString());
+
+            // If user clicked "Got it", extend the reminder period
+            if (type === 'got-it') {
+                localStorage.setItem('pwa-prompt-got-it', 'true');
+            }
+        } catch (error) {
+            console.warn('Failed to save PWA prompt dismissal:', error);
+        }
+    };
 
     useEffect(() => {
         // Detect iOS
@@ -72,9 +107,9 @@ export function PWAInstallPrompt() {
         };
     }, []);
 
-    // Show iOS-specific prompt after a delay if not installed
+    // Show iOS-specific prompt after a delay if not installed and not recently dismissed
     useEffect(() => {
-        if (isIOS && !isInstalled && !showPrompt) {
+        if (isIOS && !isInstalled && !showPrompt && !isPromptDismissed()) {
             const timer = setTimeout(() => {
                 setShowPrompt(true);
             }, 3000); // Show after 3 seconds
@@ -102,7 +137,8 @@ export function PWAInstallPrompt() {
         setShowPrompt(false);
     };
 
-    const handleDismiss = () => {
+    const handleDismiss = (type: 'remind-later' | 'got-it' = 'remind-later') => {
+        markPromptDismissed(type);
         setShowPrompt(false);
         setDeferredPrompt(null);
     };
@@ -123,7 +159,7 @@ export function PWAInstallPrompt() {
                         <Button
                             variant="ghost"
                             size="sm"
-                            onClick={handleDismiss}
+                            onClick={() => handleDismiss('remind-later')}
                             className="h-6 w-6 p-0"
                         >
                             <X className="w-3 h-3" />
@@ -146,7 +182,7 @@ export function PWAInstallPrompt() {
                             </div>
                             <div className="flex gap-2">
                                 <Button
-                                    onClick={handleDismiss}
+                                    onClick={() => handleDismiss('got-it')}
                                     size="sm"
                                     variant="outline"
                                     className="flex-1"
@@ -154,7 +190,7 @@ export function PWAInstallPrompt() {
                                     Got it
                                 </Button>
                                 <Button
-                                    onClick={handleDismiss}
+                                    onClick={() => handleDismiss('remind-later')}
                                     size="sm"
                                     className="flex-1"
                                 >
@@ -173,7 +209,7 @@ export function PWAInstallPrompt() {
                                 Install
                             </Button>
                             <Button
-                                onClick={handleDismiss}
+                                onClick={() => handleDismiss('remind-later')}
                                 size="sm"
                                 variant="outline"
                                 className="flex-1"
