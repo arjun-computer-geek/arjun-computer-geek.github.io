@@ -1,7 +1,22 @@
+
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
+  const handleViewWork = () => {
+    const element = document.querySelector("#projects");
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleGetInTouch = () => {
+    const element = document.querySelector("#contact");
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background Elements */}
@@ -16,7 +31,6 @@ export const Hero = () => {
             <span className="block text-foreground mb-2">Hi, I'm  <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent">
               Arjun
             </span></span>
-
           </h1>
 
           <div className="text-xl md:text-2xl text-muted-foreground mb-8 animate-slide-in-right delay-300">
@@ -30,19 +44,19 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in delay-500">
             <Button
               size="lg"
+              onClick={handleViewWork}
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0"
             >
-              <a href="#projects" className="flex items-center gap-2">
-                View My Work
-                <ArrowDown className="w-4 h-4" />
-              </a>
+              View My Work
+              <ArrowDown className="w-4 h-4 ml-2" />
             </Button>
             <Button
               variant="outline"
               size="lg"
+              onClick={handleGetInTouch}
               className="border-purple-500/50 hover:bg-purple-500/10"
             >
-              <a href="#contact">Get In Touch</a>
+              Get In Touch
             </Button>
           </div>
 

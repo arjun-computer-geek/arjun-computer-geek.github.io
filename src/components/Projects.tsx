@@ -14,27 +14,31 @@ export const Projects = () => {
             Featured Projects
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-4"></div>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Showcasing my most impactful and technically challenging projects
           </p>
         </div>
 
-        {/* Featured Projects */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
-          {featuredProjects.map((project, index) => (
-            <div key={project.id} className="glass rounded-2xl p-8 hover:scale-105 transition-all duration-300 glow-border">
+        {/* Featured Projects Grid - Improved spacing and consistency */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          {featuredProjects.map((project) => (
+            <div key={project.id} className="glass rounded-2xl p-8 hover:scale-105 transition-all duration-300 glow-border group">
               <div className="relative mb-6 overflow-hidden rounded-xl">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
               
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-purple-400">{project.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+                <h3 className="text-xl font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed min-h-[4rem]">
+                  {project.description}
+                </p>
                 
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
@@ -45,13 +49,13 @@ export const Projects = () => {
                 </div>
                 
                 <div className="flex gap-4 pt-4">
-                  <Button variant="outline" size="sm" className="border-purple-500/50 hover:bg-purple-500/10">
+                  <Button variant="outline" size="sm" className="border-purple-500/50 hover:bg-purple-500/10 flex-1">
                     <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                       <Github className="w-4 h-4" />
                       Code
                     </a>
                   </Button>
-                  <Button size="sm" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600">
+                  <Button size="sm" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 flex-1">
                     <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                       <ArrowRight className="w-4 h-4 rotate-45" />
                       Live Demo
@@ -63,15 +67,15 @@ export const Projects = () => {
           ))}
         </div>
 
-        {/* View All Projects Button */}
+        {/* View All Projects Button - Improved consistency */}
         <div className="text-center">
           <Button 
             size="lg" 
-            className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
+            className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 px-8 py-3 text-base font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
           >
             <a href="/projects" className="flex items-center gap-2">
               View All Projects
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-5 h-5" />
             </a>
           </Button>
         </div>

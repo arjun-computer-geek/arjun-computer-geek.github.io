@@ -1,8 +1,8 @@
-import { Github, Star, GitFork, ExternalLink, Calendar, Code } from "lucide-react";
+
+import { Github, Star, GitFork, ExternalLink, Calendar, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { usePinnedProjects } from "@/hooks/use-github";
-import { Loader2 } from "lucide-react";
 
 export const GitHubProjects = () => {
     const { data: projects, isLoading, error } = usePinnedProjects();
@@ -16,7 +16,7 @@ export const GitHubProjects = () => {
                             GitHub Projects
                         </h2>
                         <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-4"></div>
-                        <p className="text-muted-foreground max-w-2xl mx-auto">
+                        <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
                             My featured projects from GitHub, automatically updated
                         </p>
                     </div>
@@ -57,12 +57,12 @@ export const GitHubProjects = () => {
                         GitHub Projects
                     </h2>
                     <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-4"></div>
-                    <p className="text-muted-foreground max-w-2xl mx-auto">
+                    <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
                         My featured projects from GitHub, automatically updated
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     {projects?.map((project) => (
                         <div key={project.id} className="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300 glow-border group">
                             {/* Project Header */}
@@ -76,7 +76,7 @@ export const GitHubProjects = () => {
                             </div>
 
                             {/* Project Description */}
-                            <p className="text-muted-foreground leading-relaxed mb-4 min-h-[3rem]">
+                            <p className="text-muted-foreground leading-relaxed mb-4 min-h-[4rem]">
                                 {project.description || 'No description available'}
                             </p>
 
@@ -134,10 +134,10 @@ export const GitHubProjects = () => {
                 </div>
 
                 {/* View All Projects Button */}
-                <div className="text-center mt-12">
+                <div className="text-center">
                     <Button
                         size="lg"
-                        className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
+                        className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 px-8 py-3 text-base font-semibold hover:scale-105 transition-all duration-300 shadow-lg"
                     >
                         <a href="/github" className="flex items-center gap-2">
                             <Github className="w-5 h-5" />

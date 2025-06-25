@@ -1,17 +1,23 @@
+
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Experience } from "@/components/Experience";
 import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 import { GitHubProjects } from "@/components/GitHubProjects";
-import { Blog } from "@/components/Blog";
 import { Contact } from "@/components/Contact";
 import { Navigation } from "@/components/Navigation";
 import { useAnchorScroll } from "@/hooks/use-anchor-scroll";
 import DevToBlogFeed from '../components/DevToBlogFeed';
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
   useAnchorScroll();
+  const navigate = useNavigate();
+
+  const handleViewAllPosts = () => {
+    navigate("/blog");
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-purple-900/20">
@@ -23,12 +29,22 @@ const Index = () => {
         <Skills />
         <Projects />
         <GitHubProjects />
-        <div className="my-16">
-          <DevToBlogFeed limit={3} />
-          <div className="flex justify-center mt-8">
-            <a href="/blog" className="px-6 py-2 rounded-lg bg-[#e879f9] text-white font-semibold hover:bg-[#d946ef] transition-colors">View All Posts →</a>
+        
+        {/* Blog Section with consistent styling */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <DevToBlogFeed limit={3} />
+            <div className="flex justify-center mt-12">
+              <button 
+                onClick={handleViewAllPosts}
+                className="px-8 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
+              >
+                View All Posts →
+              </button>
+            </div>
           </div>
-        </div>
+        </section>
+        
         <Contact />
       </main>
     </div>

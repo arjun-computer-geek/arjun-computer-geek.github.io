@@ -1,19 +1,14 @@
+
 import { Mail, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Contact = () => {
   const handleEmailClick = () => {
-    console.log("Email button clicked!");
     window.location.href = "mailto:arjun2000raj@gmail.com";
   };
 
   const handleResumeClick = () => {
-    console.log("Resume button clicked!");
     window.open("/resume.pdf", "_blank");
-  };
-
-  const handleSocialClick = (platform: string) => {
-    console.log(`${platform} button clicked!`);
   };
 
   return (
@@ -41,17 +36,8 @@ export const Contact = () => {
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 cursor-pointer relative z-10"
               onClick={handleResumeClick}
             >
-
               Download Resume
             </Button>
-            {/* <Button
-              variant="outline"
-              size="lg"
-              className="border-purple-500/50 hover:bg-purple-500/10 cursor-pointer relative z-10"
-              onClick={handleResumeClick}
-            >
-              Download Resume
-            </Button> */}
           </div>
 
           <div className="flex justify-center gap-6 relative z-10">
@@ -60,7 +46,6 @@ export const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 hover:scale-110 transition-all duration-200 cursor-pointer relative z-10"
-              onClick={() => handleSocialClick("GitHub")}
             >
               <Github className="w-6 h-6" />
             </a>
@@ -69,14 +54,12 @@ export const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 hover:scale-110 transition-all duration-200 cursor-pointer relative z-10"
-              onClick={() => handleSocialClick("LinkedIn")}
             >
               <Linkedin className="w-6 h-6" />
             </a>
             <a
               href="mailto:arjun2000raj@gmail.com"
               className="p-3 rounded-full bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 hover:scale-110 transition-all duration-200 cursor-pointer relative z-10"
-              onClick={() => handleSocialClick("Email")}
             >
               <Mail className="w-6 h-6" />
             </a>

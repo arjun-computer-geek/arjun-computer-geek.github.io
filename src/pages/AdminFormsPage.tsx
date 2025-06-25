@@ -1,77 +1,56 @@
 
-import React, { useState } from "react";
-import { CreateProjectForm } from "@/components/forms/CreateProjectForm";
-import { CreateBlogForm } from "@/components/forms/CreateBlogForm";
-import { ProjectFormData } from "@/schemas/projectSchema";
-import { BlogFormData } from "@/schemas/blogSchema";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Navigation } from "@/components/Navigation";
+import { CreateProjectForm } from '../components/forms/CreateProjectForm';
+import { CreateBlogForm } from '../components/forms/CreateBlogForm';
+import { toast } from "sonner";
 
 const AdminFormsPage = () => {
-  const [activeForm, setActiveForm] = useState<"project" | "blog">("project");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleProjectSubmit = async (data: ProjectFormData) => {
-    console.log("Project data:", data);
-    setIsSubmitting(true);
-    // Here you would integrate with your API/Supabase
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert("Project created successfully!");
-    }, 1000);
+  const handleProjectSubmit = (data: any) => {
+    toast.success("Project created successfully!", {
+      description: `"${data.title}" has been added to your portfolio.`
+    });
   };
 
-  const handleBlogSubmit = async (data: BlogFormData) => {
-    console.log("Blog data:", data);
-    setIsSubmitting(true);
-    // Here you would integrate with your API/Supabase
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert("Blog post created successfully!");
-    }, 1000);
+  const handleBlogSubmit = (data: any) => {
+    toast.success("Blog post created successfully!", {
+      description: `"${data.title}" is ready to be published.`
+    });
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-purple-900/20 py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-4">Content Management</h1>
-          <p className="text-lg text-muted-foreground">
-            Create new projects and blog posts
-          </p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-purple-900/20">
+      <Navigation />
+      <main className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Admin Panel
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Create and manage your projects and blog posts
+            </p>
+            <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-4"></div>
+          </div>
 
-        <Card className="w-fit mx-auto mb-8">
-          <CardContent className="p-4">
-            <div className="flex gap-2">
-              <Button
-                variant={activeForm === "project" ? "default" : "outline"}
-                onClick={() => setActiveForm("project")}
-              >
-                Create Project
-              </Button>
-              <Button
-                variant={activeForm === "blog" ? "default" : "outline"}
-                onClick={() => setActiveForm("blog")}
-              >
-                Create Blog Post
-              </Button>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Create Project Form */}
+            <div className="glass rounded-2xl p-6 lg:p-8">
+              <h2 className="text-2xl font-semibold mb-6 text-center">
+                Create New Project
+              </h2>
+              <CreateProjectForm onSubmit={handleProjectSubmit} />
             </div>
-          </CardContent>
-        </Card>
 
-        {activeForm === "project" ? (
-          <CreateProjectForm
-            onSubmit={handleProjectSubmit}
-            isSubmitting={isSubmitting}
-          />
-        ) : (
-          <CreateBlogForm
-            onSubmit={handleBlogSubmit}
-            isSubmitting={isSubmitting}
-          />
-        )}
-      </div>
+            {/* Create Blog Form */}
+            <div className="glass rounded-2xl p-6 lg:p-8">
+              <h2 className="text-2xl font-semibold mb-6 text-center">
+                Create New Blog Post
+              </h2>
+              <CreateBlogForm onSubmit={handleBlogSubmit} />
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   );
 };
