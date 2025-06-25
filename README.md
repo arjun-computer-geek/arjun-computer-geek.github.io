@@ -1,14 +1,10 @@
-# Welcome to your Lovable project
+# Arjun's Portfolio Website
 
-## Project info
+A modern, responsive personal portfolio website built with React, TypeScript, and Vite. Features a Progressive Web App (PWA) with offline capabilities, GitHub integration, and a beautiful UI powered by shadcn/ui components.
 
-**URL**: https://lovable.dev/projects/3476d67f-2bf2-4381-a33b-6598a9c03239
-
-## Features
+## 🌟 Features
 
 ### 📱 Progressive Web App (PWA)
-
-This portfolio is now a fully functional Progressive Web App with offline capabilities:
 
 - **Offline Support**: Works without internet connection using cached content
 - **Installable**: Can be installed on mobile and desktop devices
@@ -18,27 +14,7 @@ This portfolio is now a fully functional Progressive Web App with offline capabi
 - **Installation Prompt**: Encourages users to install the app
 - **Offline Fallback**: Graceful offline experience with helpful messaging
 
-#### PWA Features:
-
-- **Service Worker**: Handles caching and offline functionality
-- **Web App Manifest**: Defines app appearance and behavior
-- **Runtime Caching**: Caches fonts, API calls, and static assets
-- **Update Notifications**: Informs users when new versions are available
-- **Installation Management**: Handles app installation and updates
-
-### 📄 Resume Download
-
-The portfolio includes multiple download resume buttons for easy access:
-
-- **Hero Section**: Prominent download button alongside "View My Work" and "Get In Touch"
-- **About Section**: Download button after the stats section
-- **Contact Section**: Primary download button in the contact area
-- **File Location**: Resume is served from `/public/resume.pdf`
-- **Download Behavior**: Opens in a new tab for easy viewing and downloading
-
 ### 🚀 GitHub Integration
-
-This portfolio now automatically fetches and displays data from GitHub:
 
 - **Dynamic Experience Calculation**: Automatically calculates experience from September 2023 to present
 - **Real-time Repository Data**: Fetches all public repositories with stats (stars, forks, languages)
@@ -47,82 +23,121 @@ This portfolio now automatically fetches and displays data from GitHub:
 - **Featured Projects**: Automatically showcases top repositories based on engagement
 - **Search & Filter**: Full repository browsing with search and language filtering
 
+### 📄 Resume Download
+
+- **Multiple Access Points**: Download buttons in Hero, About, and Contact sections
+- **Easy Access**: Resume served from `/public/Arjun_resume.pdf`
+- **New Tab Opening**: Opens in a new tab for easy viewing and downloading
+
 ### 🛠️ Technical Features
 
 - **React Query**: Efficient data fetching with caching and error handling
-- **TypeScript**: Full type safety for GitHub API responses
+- **TypeScript**: Full type safety throughout the application
 - **Responsive Design**: Beautiful UI that works on all devices
 - **Real-time Updates**: Data refreshes automatically every 5 minutes
+- **SEO Optimized**: Meta tags, structured data, and sitemap generation
 
-## How can I edit this code?
+## 🚀 Getting Started
 
-There are several ways of editing your application.
+### Prerequisites
 
-**Use Lovable**
+- Node.js (v18 or higher)
+- npm or yarn
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3476d67f-2bf2-4381-a33b-6598a9c03239) and start prompting.
+### Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Clone the repository**
 
-**Use your preferred IDE**
+   ```bash
+   git clone https://github.com/arjun-computer-geek/arjun-computer-geek.github.io.git
+   cd arjun-computer-geek.github.io
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. **Install dependencies**
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+   ```bash
+   npm install
+   ```
 
-Follow these steps:
+3. **Start development server**
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+   ```bash
+   npm run dev
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+4. **Build for production**
 
-# Step 3: Install the necessary dependencies.
-npm i
+   ```bash
+   npm run build:pwa
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+5. **Preview production build**
+   ```bash
+   npm run preview:pwa
+   ```
 
-# Step 5: Build for production with PWA features
-npm run build:pwa
+## 🛠️ Available Scripts
 
-# Step 6: Preview production build
-npm run preview:pwa
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build for development
+- `npm run build:pwa` - Build for production with PWA features
+- `npm run preview` - Preview production build
+- `npm run preview:pwa` - Preview PWA production build
+- `npm run lint` - Run ESLint
+
+## 🏗️ Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn/ui components
+│   ├── forms/          # Form components
+│   └── ...             # Feature-specific components
+├── pages/              # Page components
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions and configurations
+├── data/               # Static data files
+├── config/             # Configuration files
+└── schemas/            # Zod validation schemas
 ```
 
-**Edit a file directly in GitHub**
+## 🎨 Technologies Used
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Core Technologies
 
-**Use GitHub Codespaces**
+- **React 18** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **React Router** - Client-side routing
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### UI & Styling
 
-## What technologies are used for this project?
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn/ui** - Beautiful, accessible UI components
+- **Radix UI** - Headless UI primitives
+- **Lucide React** - Icon library
 
-This project is built with:
+### Data Management
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-- React Query (TanStack Query)
-- GitHub API Integration
-- **PWA (Progressive Web App)**
-  - Vite PWA Plugin
-  - Workbox (Service Worker)
-  - Web App Manifest
+- **React Query (TanStack Query)** - Server state management
+- **React Hook Form** - Form handling
+- **Zod** - Schema validation
 
-## PWA Implementation Details
+### PWA Features
+
+- **Vite PWA Plugin** - PWA generation
+- **Workbox** - Service worker management
+- **Web App Manifest** - App configuration
+
+### Additional Libraries
+
+- **React Helmet Async** - Document head management
+- **Sonner** - Toast notifications
+- **Recharts** - Data visualization
+- **Date-fns** - Date utilities
+
+## 📱 PWA Implementation
 
 ### Service Worker Strategy
 
@@ -144,14 +159,7 @@ This project is built with:
 - **Connectivity Detection**: Real-time online/offline status
 - **Graceful Degradation**: App works with limited connectivity
 
-### Installation Features
-
-- **Install Prompt**: Automatic installation suggestion
-- **App Shortcuts**: Quick access to key sections
-- **Splash Screen**: Native app-like loading experience
-- **Standalone Mode**: Full-screen app experience
-
-## GitHub Integration Details
+## 🔗 GitHub Integration
 
 ### API Endpoints Used
 
@@ -168,47 +176,34 @@ Experience is automatically calculated from September 1, 2023 to the current dat
 - Experience calculation: 1 hour stale time, 24 hours cache
 - Automatic retry with exponential backoff
 
-### Error Handling
+## 🚀 Deployment
 
-- Graceful fallbacks for API failures
-- Loading states for better UX
-- Error boundaries for component-level error handling
+This project is deployed on GitHub Pages and can be accessed at: [https://arjun-computer-geek.github.io](https://arjun-computer-geek.github.io)
 
-## How can I deploy this project?
+### Build Process
 
-Simply open [Lovable](https://lovable.dev/projects/3476d67f-2bf2-4381-a33b-6598a9c03239) and click on Share -> Publish.
+1. Run `npm run build:pwa` to create production build
+2. The build includes all PWA features and optimizations
+3. Deploy the `dist` folder to your hosting provider
 
-## Can I connect a custom domain to my Lovable project?
+## 🤝 Contributing
 
-Yes, you can!
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Recent Updates
+## 📄 License
 
-### Progressive Web App (PWA) - Latest
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-- ✅ Full offline support with intelligent caching
-- ✅ Installable app with native-like experience
-- ✅ Automatic service worker registration and updates
-- ✅ Installation prompts and app shortcuts
-- ✅ Offline fallback pages and connectivity detection
-- ✅ Runtime caching for optimal performance
-- ✅ Update notifications and seamless updates
+## 📞 Contact
 
-### Resume Download Feature
+Arjun - [@arjun-computer-geek](https://github.com/arjun-computer-geek)
 
-- ✅ Multiple download resume buttons across the portfolio
-- ✅ Hero section download button for immediate access
-- ✅ About section download button after stats
-- ✅ Contact section primary download button
-- ✅ Download icon for better visual indication
-- ✅ Opens resume in new tab for easy viewing/downloading
+Project Link: [https://github.com/arjun-computer-geek/arjun-computer-geek.github.io](https://github.com/arjun-computer-geek/arjun-computer-geek.github.io)
 
-### GitHub Integration
+---
 
-- ✅ Automatic experience calculation from September 2023
-- ✅ Real-time GitHub repository fetching
-- ✅ Dynamic project count and stats
-- ✅ Featured projects showcase
-- ✅ Search and filter functionality
-- ✅ Responsive design with loading states
-- ✅ Error handling and fallbacks
+⭐ Star this repository if you found it helpful!

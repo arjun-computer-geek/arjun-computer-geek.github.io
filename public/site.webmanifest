@@ -41,16 +41,16 @@
   ],
   "screenshots": [
     {
-      "src": "/loopedin.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/zyapaar.png",
+      "src": "/Screenshot-landing-page.png",
       "sizes": "750x1334",
       "type": "image/png",
       "form_factor": "narrow"
+    },
+    {
+      "src": "/Screenshot-git-stat.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
     }
   ],
   "shortcuts": [
