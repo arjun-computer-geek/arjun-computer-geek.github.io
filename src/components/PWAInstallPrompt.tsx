@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Download, X, Smartphone } from 'lucide-react';
+import { Download, X, Smartphone, Share, ArrowUp } from 'lucide-react';
 
 interface BeforeInstallPromptEvent extends Event {
     readonly platforms: string[];
@@ -21,37 +21,74 @@ export function PWAInstallPrompt() {
     const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
     const [showPrompt, setShowPrompt] = useState(false);
     const [isInstalled, setIsInstalled] = useState(false);
+    const [isIOS, setIsIOS] = useState(false);
+    const [isStandalone, setIsStandalone] = useState(false);
 
     useEffect(() => {
-        // Check if app is already installed
-        if (window.matchMedia('(display-mode: standalone)').matches ||
-            (window.navigator as NavigatorStandalone).standalone === true) {
-            setIsInstalled(true);
-            return;
+        // Detect iOS
+        const isIOSDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        setIsIOS(isIOSDevice);
+
+        // Check if app is already installed/standalone
+        const checkStandalone = () => {
+            const standalone = window.matchMedia('(display-mode: standalone)').matches ||
+                (window.navigator as NavigatorStandalone).standalone === true;
+            setIsStandalone(standalone);
+            setIsInstalled(standalone);
+        };
+
+        checkStandalone();
+
+        // Listen for display mode changes
+        const mediaQuery = window.matchMedia('(display-mode: standalone)');
+        mediaQuery.addEventListener('change', checkStandalone);
+
+        // Only listen for beforeinstallprompt on non-iOS devices
+        if (!isIOSDevice) {
+            const handleBeforeInstallPrompt = (e: Event) => {
+                e.preventDefault();
+                setDeferredPrompt(e as BeforeInstallPromptEvent);
+                setShowPrompt(true);
+            };
+
+            const handleAppInstalled = () => {
+                setIsInstalled(true);
+                setShowPrompt(false);
+                setDeferredPrompt(null);
+            };
+
+            window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+            window.addEventListener('appinstalled', handleAppInstalled);
+
+            return () => {
+                window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+                window.removeEventListener('appinstalled', handleAppInstalled);
+                mediaQuery.removeEventListener('change', checkStandalone);
+            };
         }
 
-        const handleBeforeInstallPrompt = (e: Event) => {
-            e.preventDefault();
-            setDeferredPrompt(e as BeforeInstallPromptEvent);
-            setShowPrompt(true);
-        };
-
-        const handleAppInstalled = () => {
-            setIsInstalled(true);
-            setShowPrompt(false);
-            setDeferredPrompt(null);
-        };
-
-        window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-        window.addEventListener('appinstalled', handleAppInstalled);
-
         return () => {
-            window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-            window.removeEventListener('appinstalled', handleAppInstalled);
+            mediaQuery.removeEventListener('change', checkStandalone);
         };
     }, []);
 
+    // Show iOS-specific prompt after a delay if not installed
+    useEffect(() => {
+        if (isIOS && !isInstalled && !showPrompt) {
+            const timer = setTimeout(() => {
+                setShowPrompt(true);
+            }, 3000); // Show after 3 seconds
+
+            return () => clearTimeout(timer);
+        }
+    }, [isIOS, isInstalled, showPrompt]);
+
     const handleInstall = async () => {
+        if (isIOS) {
+            // For iOS, we can't programmatically install, so we show instructions
+            return;
+        }
+
         if (!deferredPrompt) return;
 
         deferredPrompt.prompt();
@@ -81,7 +118,7 @@ export function PWAInstallPrompt() {
                     <div className="flex items-center justify-between">
                         <CardTitle className="text-sm font-semibold flex items-center">
                             <Smartphone className="w-4 h-4 mr-2" />
-                            Install App
+                            {isIOS ? 'Add to Home Screen' : 'Install App'}
                         </CardTitle>
                         <Button
                             variant="ghost"
@@ -93,28 +130,58 @@ export function PWAInstallPrompt() {
                         </Button>
                     </div>
                     <CardDescription className="text-xs">
-                        Install this app on your device for quick and easy access when you're on the go.
+                        {isIOS
+                            ? 'Add this app to your home screen for quick access'
+                            : 'Install this app on your device for quick and easy access when you\'re on the go.'
+                        }
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="pt-0">
-                    <div className="flex gap-2">
-                        <Button
-                            onClick={handleInstall}
-                            size="sm"
-                            className="flex-1"
-                        >
-                            <Download className="w-4 h-4 mr-2" />
-                            Install
-                        </Button>
-                        <Button
-                            onClick={handleDismiss}
-                            size="sm"
-                            variant="outline"
-                            className="flex-1"
-                        >
-                            Later
-                        </Button>
-                    </div>
+                    {isIOS ? (
+                        <div className="space-y-3">
+                            <div className="text-xs text-muted-foreground space-y-2">
+                                <p>1. Tap the <Share className="w-3 h-3 inline" /> Share button</p>
+                                <p>2. Scroll down and tap "Add to Home Screen"</p>
+                                <p>3. Tap "Add" to confirm</p>
+                            </div>
+                            <div className="flex gap-2">
+                                <Button
+                                    onClick={handleDismiss}
+                                    size="sm"
+                                    variant="outline"
+                                    className="flex-1"
+                                >
+                                    Got it
+                                </Button>
+                                <Button
+                                    onClick={handleDismiss}
+                                    size="sm"
+                                    className="flex-1"
+                                >
+                                    Remind Later
+                                </Button>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="flex gap-2">
+                            <Button
+                                onClick={handleInstall}
+                                size="sm"
+                                className="flex-1"
+                            >
+                                <Download className="w-4 h-4 mr-2" />
+                                Install
+                            </Button>
+                            <Button
+                                onClick={handleDismiss}
+                                size="sm"
+                                variant="outline"
+                                className="flex-1"
+                            >
+                                Later
+                            </Button>
+                        </div>
+                    )}
                 </CardContent>
             </Card>
         </div>
