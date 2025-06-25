@@ -26,12 +26,13 @@ const DevToBlogFeed: React.FC<DevToBlogFeedProps> = ({ limit, showSearch = false
     const [search, setSearch] = useState('');
 
     useEffect(() => {
-        fetch('https://dev.to/api/articles?username=arjun_computer_geek')
+        fetch('https://dev.to/api/articles?username=arjun_computer_geek&per_page=1000')
             .then((res) => {
                 if (!res.ok) throw new Error('Failed to fetch posts');
                 return res.json();
             })
             .then((data) => {
+
                 setPosts(data);
                 setLoading(false);
             })
@@ -52,6 +53,7 @@ const DevToBlogFeed: React.FC<DevToBlogFeedProps> = ({ limit, showSearch = false
     }, [posts, search, showSearch]);
 
     const displayPosts = limit ? filteredPosts.slice(0, limit) : filteredPosts;
+
 
     if (loading) {
         return (
@@ -138,17 +140,17 @@ const DevToBlogFeed: React.FC<DevToBlogFeedProps> = ({ limit, showSearch = false
                                 {post.title}
                             </h3>
                         </div>
-                        
+
                         <div className="text-sm text-muted-foreground mb-3">
                             {new Date(post.published_at).toLocaleDateString('en-US', {
                                 year: 'numeric', month: 'short', day: 'numeric'
                             })}
                         </div>
-                        
+
                         <p className="text-muted-foreground leading-relaxed mb-4 min-h-[4rem] line-clamp-3">
                             {post.description}
                         </p>
-                        
+
                         <div className="flex flex-wrap gap-2 mb-6">
                             {post.tag_list.slice(0, 3).map((tag) => (
                                 <span key={tag} className="px-2 py-1 text-xs rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">
@@ -161,7 +163,7 @@ const DevToBlogFeed: React.FC<DevToBlogFeedProps> = ({ limit, showSearch = false
                                 </span>
                             )}
                         </div>
-                        
+
                         <div className="mt-auto pt-4">
                             <Button
                                 asChild
