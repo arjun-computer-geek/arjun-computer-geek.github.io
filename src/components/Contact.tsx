@@ -1,14 +1,11 @@
-
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Github, Linkedin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Contact = () => {
-  const handleEmailClick = () => {
-    window.location.href = "mailto:arjun2000raj@gmail.com";
-  };
+
 
   const handleResumeClick = () => {
-    window.open("/resume.pdf", "_blank");
+    window.open("/Arjun_resume.pdf", "_blank");
   };
 
   return (
@@ -36,6 +33,7 @@ export const Contact = () => {
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 cursor-pointer relative z-10"
               onClick={handleResumeClick}
             >
+              <Download className="w-4 h-4 mr-2" />
               Download Resume
             </Button>
           </div>

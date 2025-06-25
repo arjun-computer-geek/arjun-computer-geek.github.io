@@ -6,6 +6,16 @@
 
 ## Features
 
+### 📄 Resume Download
+
+The portfolio includes multiple download resume buttons for easy access:
+
+- **Hero Section**: Prominent download button alongside "View My Work" and "Get In Touch"
+- **About Section**: Download button after the stats section
+- **Contact Section**: Primary download button in the contact area
+- **File Location**: Resume is served from `/public/resume.pdf`
+- **Download Behavior**: Opens in a new tab for easy viewing and downloading
+
 ### 🚀 GitHub Integration
 
 This portfolio now automatically fetches and displays data from GitHub:
@@ -115,7 +125,16 @@ Yes, you can!
 
 ## Recent Updates
 
-### GitHub Integration (Latest)
+### Resume Download Feature (Latest)
+
+- ✅ Multiple download resume buttons across the portfolio
+- ✅ Hero section download button for immediate access
+- ✅ About section download button after stats
+- ✅ Contact section primary download button
+- ✅ Download icon for better visual indication
+- ✅ Opens resume in new tab for easy viewing/downloading
+
+### GitHub Integration
 
 - ✅ Automatic experience calculation from September 2023
 - ✅ Real-time GitHub repository fetching
