@@ -1,5 +1,5 @@
-
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Search } from 'lucide-react';
@@ -19,28 +19,22 @@ interface DevToBlogFeedProps {
     showSearch?: boolean;
 }
 
+async function fetchDevToPosts(): Promise<DevToPost[]> {
+    const res = await fetch('https://dev.to/api/articles?username=arjun_computer_geek&per_page=1000');
+    if (!res.ok) throw new Error('Failed to fetch posts');
+    return res.json();
+}
+
 const DevToBlogFeed: React.FC<DevToBlogFeedProps> = ({ limit, showSearch = false }) => {
-    const [posts, setPosts] = useState<DevToPost[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
     const [search, setSearch] = useState('');
-
-    useEffect(() => {
-        fetch('https://dev.to/api/articles?username=arjun_computer_geek&per_page=1000')
-            .then((res) => {
-                if (!res.ok) throw new Error('Failed to fetch posts');
-                return res.json();
-            })
-            .then((data) => {
-
-                setPosts(data);
-                setLoading(false);
-            })
-            .catch((err) => {
-                setError(err.message);
-                setLoading(false);
-            });
-    }, []);
+    const { data: posts = [], isLoading, error } = useQuery<DevToPost[]>({
+        queryKey: ['devto-posts'],
+        queryFn: fetchDevToPosts,
+        staleTime: 1000 * 60 * 5, // 5 minutes
+        gcTime: 1000 * 60 * 60, // 1 hour
+        retry: 2,
+        retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 10000),
+    });
 
     const filteredPosts = useMemo(() => {
         if (!showSearch || !search.trim()) return posts;
@@ -54,8 +48,7 @@ const DevToBlogFeed: React.FC<DevToBlogFeedProps> = ({ limit, showSearch = false
 
     const displayPosts = limit ? filteredPosts.slice(0, limit) : filteredPosts;
 
-
-    if (loading) {
+    if (isLoading) {
         return (
             <div className="max-w-7xl mx-auto text-center py-20">
                 <div className="text-lg text-muted-foreground">Loading Dev.to posts...</div>

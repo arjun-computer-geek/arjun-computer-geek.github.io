@@ -6,6 +6,26 @@
 
 ## Features
 
+### 📱 Progressive Web App (PWA)
+
+This portfolio is now a fully functional Progressive Web App with offline capabilities:
+
+- **Offline Support**: Works without internet connection using cached content
+- **Installable**: Can be installed on mobile and desktop devices
+- **App-like Experience**: Full-screen standalone mode with native app feel
+- **Automatic Updates**: Seamless updates with user notification
+- **Smart Caching**: Intelligent caching strategy for optimal performance
+- **Installation Prompt**: Encourages users to install the app
+- **Offline Fallback**: Graceful offline experience with helpful messaging
+
+#### PWA Features:
+
+- **Service Worker**: Handles caching and offline functionality
+- **Web App Manifest**: Defines app appearance and behavior
+- **Runtime Caching**: Caches fonts, API calls, and static assets
+- **Update Notifications**: Informs users when new versions are available
+- **Installation Management**: Handles app installation and updates
+
 ### 📄 Resume Download
 
 The portfolio includes multiple download resume buttons for easy access:
@@ -64,6 +84,12 @@ npm i
 
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
+
+# Step 5: Build for production with PWA features
+npm run build:pwa
+
+# Step 6: Preview production build
+npm run preview:pwa
 ```
 
 **Edit a file directly in GitHub**
@@ -91,6 +117,39 @@ This project is built with:
 - Tailwind CSS
 - React Query (TanStack Query)
 - GitHub API Integration
+- **PWA (Progressive Web App)**
+  - Vite PWA Plugin
+  - Workbox (Service Worker)
+  - Web App Manifest
+
+## PWA Implementation Details
+
+### Service Worker Strategy
+
+- **Cache First**: Static assets (images, fonts, CSS, JS)
+- **Network First**: API calls with fallback to cache
+- **Stale While Revalidate**: Dynamic content with background updates
+
+### Caching Strategy
+
+- **Static Assets**: Cached for 1 year (fonts, images, icons)
+- **API Data**: Cached for 1 day with network-first approach
+- **App Shell**: Cached for instant loading
+- **Runtime Caching**: Intelligent caching based on content type
+
+### Offline Features
+
+- **Offline Fallback Page**: Helpful message when content unavailable
+- **Cached Content Access**: All cached content available offline
+- **Connectivity Detection**: Real-time online/offline status
+- **Graceful Degradation**: App works with limited connectivity
+
+### Installation Features
+
+- **Install Prompt**: Automatic installation suggestion
+- **App Shortcuts**: Quick access to key sections
+- **Splash Screen**: Native app-like loading experience
+- **Standalone Mode**: Full-screen app experience
 
 ## GitHub Integration Details
 
@@ -125,7 +184,17 @@ Yes, you can!
 
 ## Recent Updates
 
-### Resume Download Feature (Latest)
+### Progressive Web App (PWA) - Latest
+
+- ✅ Full offline support with intelligent caching
+- ✅ Installable app with native-like experience
+- ✅ Automatic service worker registration and updates
+- ✅ Installation prompts and app shortcuts
+- ✅ Offline fallback pages and connectivity detection
+- ✅ Runtime caching for optimal performance
+- ✅ Update notifications and seamless updates
+
+### Resume Download Feature
 
 - ✅ Multiple download resume buttons across the portfolio
 - ✅ Hero section download button for immediate access
