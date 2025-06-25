@@ -49,8 +49,9 @@ export const Projects = () => {
               <div className="relative mb-6 overflow-hidden rounded-xl">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} - ${project.description}`}
                   className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 {project.private && (

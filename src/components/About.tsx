@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useExperience, useGitHubStats } from "@/hooks/use-github";
 import { Loader2 } from "lucide-react";
@@ -33,9 +32,10 @@ export const About = () => {
                     ) : (
                       <img
                         src="/profile.png"
-                        alt="Profile"
+                        alt="Arjun Kumar - Full Stack Developer Profile Photo"
                         className="w-full h-full rounded-xl object-cover shadow-lg"
                         onError={() => setImgError(true)}
+                        loading="eager"
                       />
                     )}
                   </div>
