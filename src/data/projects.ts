@@ -15,15 +15,30 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  // {
+  //   id: "loopedin",
+  //   title: "LoopedIn",
+  //   description: "All-in-one tool for collecting feedback, building roadmaps, sharing changelogs and publishing knowledge bases.",
+  //   longDescription: "Worked on admin page, new public page redesign in SvelteKit and Node.js, implemented SSO, SAML, multi-domain features. Deployed on Heroku using Docker for the new public page deployment. Implemented Upstash QStash and Redis, Bull and sockets for event detection.",
+  //   image: "/loopedin.png?w=500&h=300&fit=crop",
+  //   tech: ["SvelteKit", "Node.js", "SSO", "SAML", "Docker", "Heroku", "Redis", "Bull", "Socket.io", "Upstash QStash"],
+  //   github: "#",
+  //   live: "https://app.loopedin.io/",
+  //   featured: true,
+  //   category: "Full Stack",
+  //   private: true,
+  //   company: "IIH Global",
+  //   companyUrl: "https://www.iihglobal.com/"
+  // },
   {
-    id: "loopedin",
-    title: "LoopedIn",
+    id: "confidential",
+    title: "confidential",
     description: "All-in-one tool for collecting feedback, building roadmaps, sharing changelogs and publishing knowledge bases.",
     longDescription: "Worked on admin page, new public page redesign in SvelteKit and Node.js, implemented SSO, SAML, multi-domain features. Deployed on Heroku using Docker for the new public page deployment. Implemented Upstash QStash and Redis, Bull and sockets for event detection.",
-    image: "/loopedin.png?w=500&h=300&fit=crop",
+    image: "/private.jpg?w=500&h=300&fit=crop",
     tech: ["SvelteKit", "Node.js", "SSO", "SAML", "Docker", "Heroku", "Redis", "Bull", "Socket.io", "Upstash QStash"],
     github: "#",
-    live: "https://app.loopedin.io/",
+    live: "",
     featured: true,
     category: "Full Stack",
     private: true,
