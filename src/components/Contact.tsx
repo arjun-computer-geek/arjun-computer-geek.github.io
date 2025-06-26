@@ -1,4 +1,3 @@
-
 import { Mail, Github, Linkedin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -21,7 +20,7 @@ export const Contact = () => {
           <div className="mb-6 xs:mb-8">
             <h3 className="text-lg xs:text-xl sm:text-2xl font-semibold mb-3 xs:mb-4 px-2">Ready to Start a Project?</h3>
             <p className="text-sm xs:text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2">
-              I'm always excited to work on new projects and collaborate with amazing people.
+              I'm a Full Stack Developer and freelancer, always excited to work on new projects and collaborate with amazing people.
               Whether you have a project in mind or just want to chat about tech, feel free to reach out!
             </p>
           </div>

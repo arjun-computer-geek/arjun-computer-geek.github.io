@@ -40,7 +40,7 @@ const ProjectsPage = () => {
   return (
     <>
       <SEO
-        title="Projects - Arjun Kumar | Full Stack Developer Portfolio"
+        title="Projects - Arjun Kumar | Full Stack Developer & Freelancer Portfolio"
         description="Explore Arjun Kumar's comprehensive portfolio of web development projects including React, Node.js, MongoDB, Docker applications. View live demos and source code."
         url="https://arjun-computer-geek.github.io/projects"
         keywords="React Projects, Node.js Projects, Full Stack Projects, Web Development Portfolio, MERN Stack Projects, Docker Projects, TypeScript Projects"

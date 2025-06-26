@@ -33,7 +33,7 @@ export const Hero = () => {
           </h1>
 
           <div className="text-base xs:text-lg sm:text-xl md:text-2xl text-muted-foreground mb-6 sm:mb-8 animate-slide-in-right delay-300">
-            <p className="mb-2">Full Stack Developer</p>
+            <p className="mb-2">Full Stack Developer & Freelancer</p>
             <p className="text-sm xs:text-base sm:text-base md:text-lg max-w-2xl mx-auto px-2">
               Passionate about creating innovative web solutions with React, Next.js, and Node.js.
               I love building chat applications, e-commerce platforms, and internationalization features.

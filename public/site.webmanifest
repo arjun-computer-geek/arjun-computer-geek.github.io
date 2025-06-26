@@ -1,7 +1,7 @@
 {
-  "name": "Arjun Kumar - Full Stack Developer Portfolio",
+  "name": "Arjun Kumar - Full Stack Developer & Freelancer Portfolio",
   "short_name": "Arjun Kumar",
-  "description": "Full Stack Developer specializing in MERN stack, React, Node.js, Next.js, Svelte, SvelteKit, MongoDB, Docker, and modern web technologies",
+  "description": "Full Stack Developer and freelancer specializing in MERN stack, React, Node.js, Next.js, Svelte, SvelteKit, MongoDB, Docker, and modern web technologies",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",

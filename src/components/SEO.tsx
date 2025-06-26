@@ -17,9 +17,9 @@ interface SEOProps {
 }
 
 export const SEO = ({
-    title = "Arjun Kumar — Full Stack Developer | MERN Stack, React, Node.js, TypeScript, Docker, Svelte Expert",
-    description = "Arjun Kumar is a passionate Full Stack Developer with expertise in MERN stack, React, Node.js, MongoDB, Docker, TypeScript, Svelte, Next.js, and modern web technologies. Explore my portfolio, open-source projects, technical blog posts, and professional experience.",
-    keywords = "Arjun Kumar, Full Stack Developer, React Developer, MERN Stack, Node.js, MongoDB, Express.js, React.js, TypeScript, JavaScript, Svelte, SvelteKit, Next.js, Docker, Tailwind CSS, Material UI, Redux, Zustand, Socket.io, JWT, Heroku, Web Development, Frontend Developer, Backend Developer, API Development, Database Design, DevOps, Cloud Computing, Portfolio, GitHub, Open Source, Technical Blog, Software Engineer, Web Applications",
+    title = "Arjun Kumar — Full Stack Developer & Freelancer | MERN Stack, React, Node.js, TypeScript, Docker, Svelte Expert",
+    description = "Arjun Kumar is a passionate Full Stack Developer and freelancer with expertise in MERN stack, React, Node.js, MongoDB, Docker, TypeScript, Svelte, Next.js, and modern web technologies. Explore my portfolio, open-source projects, technical blog posts, and professional experience.",
+    keywords = "Arjun Kumar, Full Stack Developer, Freelancer, React Developer, MERN Stack, Node.js, MongoDB, Express.js, React.js, TypeScript, JavaScript, Svelte, SvelteKit, Next.js, Docker, Tailwind CSS, Material UI, Redux, Zustand, Socket.io, JWT, Heroku, Web Development, Frontend Developer, Backend Developer, API Development, Database Design, DevOps, Cloud Computing, Portfolio, GitHub, Open Source, Technical Blog, Software Engineer, Web Applications, Freelance Developer, Remote Developer, Contract Developer",
     image = "https://arjun-computer-geek.github.io/opengraph-arjun.png",
     url = "https://arjun-computer-geek.github.io/",
     type = "website",
@@ -54,7 +54,7 @@ export const SEO = ({
             <meta property="og:image" content={image} />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
-            <meta property="og:image:alt" content="Arjun Kumar - Full Stack Developer Portfolio" />
+            <meta property="og:image:alt" content="Arjun Kumar - Full Stack Developer & Freelancer Portfolio" />
             <meta property="og:site_name" content="Arjun Kumar - Developer Portfolio" />
             <meta property="og:locale" content="en_US" />
             {author && <meta property="og:author" content={author} />}

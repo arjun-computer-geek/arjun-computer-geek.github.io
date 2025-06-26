@@ -38,12 +38,12 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
         "@type": "WebSite",
         "name": "Arjun Kumar - Developer Portfolio",
         "url": "https://arjun-computer-geek.github.io/",
-        "description": "Full Stack Developer Portfolio showcasing projects, blog posts, and professional experience",
+        "description": "Full Stack Developer and Freelancer Portfolio showcasing projects, blog posts, and professional experience",
         "author": {
             "@type": "Person",
             "name": "Arjun Kumar",
-            "jobTitle": "Full Stack Developer",
-            "description": "Experienced Full Stack Developer specializing in MERN stack, React, Node.js, MongoDB, Docker, and modern web technologies",
+            "jobTitle": "Full Stack Developer & Freelancer",
+            "description": "Experienced Full Stack Developer and freelancer specializing in MERN stack, React, Node.js, MongoDB, Docker, and modern web technologies",
             "url": "https://arjun-computer-geek.github.io/",
             "image": "https://arjun-computer-geek.github.io/profile.png",
             "sameAs": [
@@ -74,7 +74,9 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
                 "API Development",
                 "Database Design",
                 "Frontend Development",
-                "Backend Development"
+                "Backend Development",
+                "Freelance Development",
+                "Remote Development"
             ],
             "worksFor": {
                 "@type": "Organization",
@@ -140,7 +142,7 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
         "author": {
             "@type": "Person",
             "name": "Arjun Kumar",
-            "jobTitle": "Full Stack Developer"
+            "jobTitle": "Full Stack Developer & Freelancer"
         },
         "offers": {
             "@type": "Offer",
@@ -163,7 +165,7 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
         "author": {
             "@type": "Person",
             "name": "Arjun Kumar",
-            "jobTitle": "Full Stack Developer"
+            "jobTitle": "Full Stack Developer & Freelancer"
         },
         "publisher": {
             "@type": "Organization",
@@ -184,7 +186,7 @@ export const StructuredData = ({ type, data }: StructuredDataProps) => {
         "author": {
             "@type": "Person",
             "name": "Arjun Kumar",
-            "jobTitle": "Full Stack Developer"
+            "jobTitle": "Full Stack Developer & Freelancer"
         },
         "publisher": {
             "@type": "Organization",

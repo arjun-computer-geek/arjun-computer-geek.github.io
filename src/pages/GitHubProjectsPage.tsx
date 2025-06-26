@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { useGitHubRepos } from "@/hooks/use-github";
 import { Navigation } from "@/components/Navigation";
 import { GitHubRepo } from "@/lib/github";
+import { SEO } from "@/components/SEO";
+import { StructuredData } from "@/components/StructuredData";
 import moment from "moment";
 
 const GitHubProjectsPage = () => {
@@ -99,6 +101,13 @@ const GitHubProjectsPage = () => {
     if (isLoading) {
         return (
             <>
+                <SEO
+                    title="GitHub Projects - Arjun Kumar | Full Stack Developer & Freelancer"
+                    description="Explore Arjun Kumar's GitHub repositories showcasing React, Node.js, MERN stack, Docker, and modern web development projects. Open source contributions from a Full Stack Developer and freelancer."
+                    url="https://arjun-computer-geek.github.io/github"
+                    keywords="GitHub Projects, Open Source Projects, React Projects, Node.js Projects, MERN Stack Projects, Full Stack Developer GitHub, Freelancer GitHub, Web Development Projects, Open Source Contributions"
+                />
+                <StructuredData type="projects" />
                 <Navigation />
                 <section className="py-20 px-4 sm:px-6 lg:px-8">
                     <div className="max-w-7xl mx-auto text-center">
@@ -113,6 +122,13 @@ const GitHubProjectsPage = () => {
     if (error) {
         return (
             <>
+                <SEO
+                    title="GitHub Projects - Arjun Kumar | Full Stack Developer & Freelancer"
+                    description="Explore Arjun Kumar's GitHub repositories showcasing React, Node.js, MERN stack, Docker, and modern web development projects. Open source contributions from a Full Stack Developer and freelancer."
+                    url="https://arjun-computer-geek.github.io/github"
+                    keywords="GitHub Projects, Open Source Projects, React Projects, Node.js Projects, MERN Stack Projects, Full Stack Developer GitHub, Freelancer GitHub, Web Development Projects, Open Source Contributions"
+                />
+                <StructuredData type="projects" />
                 <Navigation />
                 <section className="py-20 px-4 sm:px-6 lg:px-8">
                     <div className="max-w-7xl mx-auto text-center">
@@ -203,6 +219,13 @@ const GitHubProjectsPage = () => {
 
     return (
         <>
+            <SEO
+                title="GitHub Projects - Arjun Kumar | Full Stack Developer & Freelancer"
+                description="Explore Arjun Kumar's GitHub repositories showcasing React, Node.js, MERN stack, Docker, and modern web development projects. Open source contributions from a Full Stack Developer and freelancer."
+                url="https://arjun-computer-geek.github.io/github"
+                keywords="GitHub Projects, Open Source Projects, React Projects, Node.js Projects, MERN Stack Projects, Full Stack Developer GitHub, Freelancer GitHub, Web Development Projects, Open Source Contributions"
+            />
+            <StructuredData type="projects" />
             <Navigation />
             <section className="py-20 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto">
