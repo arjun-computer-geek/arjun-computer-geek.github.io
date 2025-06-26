@@ -1,4 +1,3 @@
-
 import { Github, Star, GitFork, ExternalLink, Calendar, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -64,24 +63,25 @@ export const GitHubProjects = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     {projects?.map((project) => (
-                        <div key={project.id} className="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300 glow-border group">
-                            {/* Project Header */}
-                            <div className="flex items-start justify-between mb-4">
-                                <h3 className="text-xl font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
+                        <div key={project.id} className="glass rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 hover:scale-105 transition-all duration-300 glow-border group flex flex-col h-full relative">
+                            {/* Card Header */}
+                            <div className="flex items-start justify-between mb-2 sm:mb-4 gap-2">
+                                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
                                     {project.name}
+                                    {project.isPinned && <span className="inline ml-1 align-middle"><svg className="w-4 h-4 text-yellow-500 inline" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 6.343a8 8 0 11-11.314 0M12 2v10" /></svg></span>}
                                 </h3>
-                                <Badge variant="outline" className="border-purple-500/50 text-purple-300">
+                                <Badge variant="outline" className="border-purple-500/50 text-purple-300 text-xs sm:text-sm px-2 py-0.5">
                                     {project.language || 'Mixed'}
                                 </Badge>
                             </div>
 
                             {/* Project Description */}
-                            <p className="text-muted-foreground leading-relaxed mb-4 min-h-[4rem]">
+                            <p className="text-muted-foreground leading-relaxed mb-2 sm:mb-4 min-h-[3rem] sm:min-h-[4rem] text-xs sm:text-sm md:text-base">
                                 {project.description || 'No description available'}
                             </p>
 
                             {/* Project Stats */}
-                            <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
+                            <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-2 sm:mb-4 text-xs sm:text-sm text-muted-foreground">
                                 <div className="flex items-center gap-1">
                                     <Star className="w-4 h-4 text-yellow-500" />
                                     <span>{project.stargazers_count}</span>
@@ -98,14 +98,14 @@ export const GitHubProjects = () => {
 
                             {/* Topics/Tags */}
                             {project.topics && project.topics.length > 0 && (
-                                <div className="flex flex-wrap gap-2 mb-4">
+                                <div className="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-4">
                                     {project.topics.slice(0, 3).map((topic) => (
-                                        <span key={topic} className="px-2 py-1 text-xs rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                                        <span key={topic} className="px-2 py-0.5 text-[10px] sm:text-xs rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">
                                             {topic}
                                         </span>
                                     ))}
                                     {project.topics.length > 3 && (
-                                        <span className="px-2 py-1 text-xs rounded bg-secondary text-muted-foreground">
+                                        <span className="px-2 py-0.5 text-[10px] sm:text-xs rounded bg-secondary text-muted-foreground">
                                             +{project.topics.length - 3}
                                         </span>
                                     )}
@@ -113,15 +113,15 @@ export const GitHubProjects = () => {
                             )}
 
                             {/* Action Buttons */}
-                            <div className="flex gap-3 pt-4">
-                                <Button variant="outline" size="sm" className="border-purple-500/50 hover:bg-purple-500/10 flex-1">
+                            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2 sm:pt-4">
+                                <Button variant="outline" size="sm" className="border-purple-500/50 hover:bg-purple-500/10 w-full sm:w-auto">
                                     <a href={project.html_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                                         <Github className="w-4 h-4" />
                                         Code
                                     </a>
                                 </Button>
                                 {project.homepage && (
-                                    <Button size="sm" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 flex-1">
+                                    <Button size="sm" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 w-full sm:w-auto">
                                         <a href={project.homepage} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                                             <ExternalLink className="w-4 h-4" />
                                             Demo

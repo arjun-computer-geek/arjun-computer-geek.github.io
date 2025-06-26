@@ -43,54 +43,54 @@ export const Projects = () => {
         </div>
 
         {/* Featured Projects Grid - Improved spacing and consistency */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {featuredProjects.map((project) => (
-            <div key={project.id} className="glass rounded-2xl p-8 hover:scale-105 transition-all duration-300 glow-border group flex flex-col h-full relative">
-              <div className="relative mb-6 overflow-hidden rounded-xl">
+            <div key={project.id} className="glass rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:scale-105 transition-all duration-300 glow-border group flex flex-col h-full relative">
+              <div className="relative mb-4 sm:mb-6 overflow-hidden rounded-lg sm:rounded-xl">
                 <img
                   src={project.image}
                   alt={`${project.title} - ${project.description}`}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-36 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 {project.private && (
-                  <div className="absolute top-4 right-4 bg-yellow-500/90 text-black px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 bg-yellow-500/90 text-black px-2 sm:px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
                     <Lock className="w-3 h-3" />
                     Private
                   </div>
                 )}
               </div>
 
-              <div className="space-y-4 flex-1 flex flex-col">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
+              <div className="space-y-3 sm:space-y-4 flex-1 flex flex-col">
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
                     {project.title}
                   </h3>
-                  <Badge variant="outline" className="border-purple-500/50 text-purple-300">
+                  <Badge variant="outline" className="border-purple-500/50 text-purple-300 text-xs sm:text-sm px-2 py-0.5">
                     {project.category}
                   </Badge>
                 </div>
                 {project.company && (
                   project.companyUrl ? (
-                    <a href={project.companyUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-purple-400 font-medium text-xs mb-2 hover:underline hover:text-pink-400 transition-colors">
+                    <a href={project.companyUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-purple-400 font-medium text-xs mb-1 hover:underline hover:text-pink-400 transition-colors">
                       <Briefcase className="w-3 h-3" />
                       {project.company}
                     </a>
                   ) : (
-                    <div className="flex items-center gap-1 text-purple-400 font-medium text-xs mb-2">
+                    <div className="flex items-center gap-1 text-purple-400 font-medium text-xs mb-1">
                       <Briefcase className="w-3 h-3" />
                       {project.company}
                     </div>
                   )
                 )}
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                   {project.description}
                 </p>
 
                 {/* Long Description with Read More */}
-                <div className="mt-4 p-4 bg-purple-500/10 rounded-lg border border-purple-500/20">
-                  <p className="text-muted-foreground leading-relaxed text-sm">
+                <div className="mt-2 sm:mt-4 p-3 sm:p-4 bg-purple-500/10 rounded-md sm:rounded-lg border border-purple-500/20">
+                  <p className="text-muted-foreground leading-relaxed text-xs sm:text-sm">
                     {expandedProjects.has(project.id)
                       ? project.longDescription
                       : truncateDescription(project.longDescription, CHAR_LIMIT)
@@ -100,7 +100,7 @@ export const Projects = () => {
                   {hasMoreContent(project.longDescription, CHAR_LIMIT) && (
                     <button
                       onClick={() => toggleProjectExpansion(project.id)}
-                      className="text-purple-400 hover:text-purple-300 text-sm font-medium flex items-center gap-1 transition-colors mt-2"
+                      className="text-purple-400 hover:text-purple-300 text-xs sm:text-sm font-medium flex items-center gap-1 transition-colors mt-2"
                     >
                       {expandedProjects.has(project.id) ? (
                         <>
@@ -117,40 +117,39 @@ export const Projects = () => {
                   )}
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1 sm:gap-2">
                   {project.tech.map((tech) => (
-                    <span key={tech} className="px-3 py-1 text-xs rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                    <span key={tech} className="px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-4 pt-4 mt-auto">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 pt-3 sm:pt-4 mt-auto">
                   {project.private ? (
-                    <Button variant="outline" size="sm" className="border-purple-500/50 hover:bg-purple-500/10 flex-1" disabled>
+                    <Button variant="outline" size="sm" className="border-purple-500/50 hover:bg-purple-500/10 w-full sm:w-auto" disabled>
                       <Lock className="w-4 h-4 mr-2" />
                       Private Code
                     </Button>
                   ) : (
-                    <Button variant="outline" size="sm" className="border-purple-500/50 hover:bg-purple-500/10 flex-1">
+                    <Button variant="outline" size="sm" className="border-purple-500/50 hover:bg-purple-500/10 w-full sm:w-auto">
                       <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                         <Github className="w-4 h-4" />
                         Code
                       </a>
                     </Button>
                   )}
-                  {project.live ? <Button size="sm" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 flex-1">
+                  {project.live ? <Button size="sm" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 w-full sm:w-auto">
                     <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                       <ArrowRight className="w-4 h-4 rotate-45" />
                       Live Demo
                     </a>
                   </Button> :
-                    <Button disabled size="sm" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 flex-1">
+                    <Button disabled size="sm" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 w-full sm:w-auto">
                       <ArrowRight className="w-4 h-4 rotate-45" />
                       Confidential
                     </Button>
                   }
-
                 </div>
               </div>
             </div>
