@@ -1,15 +1,37 @@
-
 import { useState } from "react";
-import { useExperience, useGitHubStats } from "@/hooks/use-github";
+import { useGitHubStats } from "@/hooks/use-github";
 import { Loader2 } from "lucide-react";
-import { formatExperience } from "@/lib/utils";
+import { experience } from "@/data/experience";
 
 export const About = () => {
   const [imgError, setImgError] = useState(false);
-  const { data: experience, isLoading: experienceLoading } = useExperience();
   const { data: stats, isLoading: statsLoading } = useGitHubStats();
 
-  const isLoading = experienceLoading || statsLoading;
+  // Calculate total years of experience from local data
+  const calculateTotalExperience = () => {
+    let totalMonths = 0;
+
+    experience.forEach(exp => {
+      const startDate = new Date(exp.startDate);
+      const endDate = exp.current ? new Date() : new Date(exp.endDate);
+
+      const monthsDiff = (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+        (endDate.getMonth() - startDate.getMonth());
+
+      totalMonths += Math.max(0, monthsDiff);
+    });
+
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
+
+    if (years === 0) {
+      return `${months} months`;
+    } else if (months === 0) {
+      return `${years} years`;
+    } else {
+      return `${years}.${months} years`;
+    }
+  };
 
   return (
     <section id="about" className="py-12 sm:py-16 lg:py-20 px-2 xs:px-4 sm:px-6 lg:px-8">
@@ -65,21 +87,13 @@ export const About = () => {
               {/* Primary Stats Grid */}
               <div className="grid grid-cols-2 gap-3 xs:gap-4 sm:gap-6">
                 <div className="text-center p-3 xs:p-4 sm:p-6 rounded-md xs:rounded-lg sm:rounded-xl bg-purple-500/10 border border-purple-500/20 backdrop-blur-sm">
-                  {isLoading ? (
-                    <div className="flex items-center justify-center">
-                      <Loader2 className="w-5 h-5 xs:w-6 xs:h-6 sm:w-8 sm:h-8 animate-spin text-purple-400" />
-                    </div>
-                  ) : (
-                    <>
-                      <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-purple-400 mb-1 sm:mb-2">
-                        {experience ? formatExperience(experience.years, experience.months % 12) : '0 months'}
-                      </div>
-                      <div className="text-xs sm:text-sm text-muted-foreground font-medium">Experience</div>
-                    </>
-                  )}
+                  <div className="text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold text-purple-400 mb-1 sm:mb-2">
+                    {calculateTotalExperience()}
+                  </div>
+                  <div className="text-xs sm:text-sm text-muted-foreground font-medium">Experience</div>
                 </div>
                 <div className="text-center p-3 xs:p-4 sm:p-6 rounded-md xs:rounded-lg sm:rounded-xl bg-pink-500/10 border border-pink-500/20 backdrop-blur-sm">
-                  {isLoading ? (
+                  {statsLoading ? (
                     <div className="flex items-center justify-center">
                       <Loader2 className="w-5 h-5 xs:w-6 xs:h-6 sm:w-8 sm:h-8 animate-spin text-pink-400" />
                     </div>
@@ -95,7 +109,7 @@ export const About = () => {
               </div>
 
               {/* Secondary Stats Grid */}
-              {!isLoading && stats && (
+              {!statsLoading && stats && (
                 <div className="grid grid-cols-1 xxs:grid-cols-3 gap-2 xs:gap-3 sm:gap-4">
                   <div className="text-center p-2 xs:p-3 sm:p-4 rounded-md xs:rounded-lg bg-blue-500/10 border border-blue-500/20 backdrop-blur-sm">
                     <div className="text-sm xs:text-base sm:text-lg md:text-xl font-bold text-blue-400 mb-1">{stats.totalStars}</div>

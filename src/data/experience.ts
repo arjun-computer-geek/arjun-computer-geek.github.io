@@ -2,6 +2,7 @@ export interface Experience {
   id: string;
   title: string;
   company: string;
+  website?: string;
   location: string;
   startDate: string;
   endDate: string;
@@ -17,23 +18,28 @@ export const experience: Experience[] = [
     id: "iih-global-fullstack",
     title: "Full Stack (MERN) Developer",
     company: "IIH Global",
-    location: "Remote",
+    website: "https://www.iihglobal.com",
+    location: "Ahmedabad, Gujarat, India",
     startDate: "2024-04",
-    endDate: "",
+    endDate: "2025-06",
     current: true,
     description: "Working as a Full Stack Developer specializing in MERN stack development with focus on custom domain and Single Sign-On (SSO) systems.",
     achievements: [
       "Developed custom domain and Single Sign-On (SSO) login systems using Node.js and EJS",
-      "Implemented multi-domain login functionality with Logto, enhancing user authentication across multiple platforms"
+      "Implemented multi-domain login functionality with Logto, enhancing user authentication across multiple platforms",
+      "Worked with legacy EJS templates and modernized public-facing pages with improved design and functionality",
+      "Upgraded critical parts of the application with new code architecture, enhanced UI/UX design, and optimized database structures",
+      "Deployed and hosted applications using Docker containers on Heroku platform for scalable cloud deployment"
     ],
-    technologies: ["Node.js", "EJS", "Logto", "SSO", "Multi-domain", "Authentication"],
+    technologies: ["Node.js", "SvelteKit", "EJS", "Logto", "SSO", "Multi-domain", "Authentication", "Docker", "Heroku", "Database Optimization", "UI/UX Design"],
     type: "full-time"
   },
   {
     id: "zyapaar-frontend",
     title: "Frontend Developer",
     company: "Zyapaar",
-    location: "Remote",
+    website: "https://zyapaar.com",
+    location: "Ahmedabad, Gujarat, India",
     startDate: "2022-09",
     endDate: "2024-04",
     current: false,
@@ -52,5 +58,28 @@ export const experience: Experience[] = [
       "Nginx", "Docker", "Excel Data Extraction", "Admin Panel"
     ],
     type: "full-time"
+  },
+  {
+    id: "neogcamp-teaching-assistant",
+    title: "Student Trainee",
+    company: "NeogCamp",
+    website: "https://neog.camp",
+    location: "Remote",
+    startDate: "2022-01",
+    endDate: "2022-07",
+    current: false,
+    description: "Completed intensive web development bootcamp training program, learning modern web technologies and best practices through hands-on projects.",
+    achievements: [
+      "Completed comprehensive web development curriculum covering HTML, CSS, JavaScript, and React fundamentals",
+      "Built multiple projects including responsive websites and interactive web applications",
+      "Learned version control with Git and collaborative development workflows",
+      "Developed strong problem-solving skills through debugging and troubleshooting exercises",
+      "Gained practical experience with modern web development tools and frameworks"
+    ],
+    technologies: [
+      "HTML", "CSS", "JavaScript", "React", "Git", "Web Development", 
+      "Responsive Design", "Frontend Development", "Project Development"
+    ],
+    type: "contract"
   }
 ]; 

@@ -57,7 +57,7 @@ interface GitHubTopicsResponse {
 
 const GITHUB_API_BASE = 'https://api.github.com';
 const USERNAME = 'arjun-computer-geek';
-const EXPERIENCE_START_DATE = '2023-09-01'; // September 2023
+const EXPERIENCE_START_DATE = '2022-09-01'; // September 2023
 
 export class GitHubService {
   private static async fetchWithRateLimit<T>(url: string): Promise<T> {

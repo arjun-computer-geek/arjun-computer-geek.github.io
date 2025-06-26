@@ -1,4 +1,4 @@
-import { Calendar, MapPin, Building2, CheckCircle } from "lucide-react";
+import { Calendar, MapPin, Building2, CheckCircle, ExternalLink } from "lucide-react";
 import { experience } from "@/data/experience";
 import { Badge } from "@/components/ui/badge";
 
@@ -11,6 +11,39 @@ export const Experience = () => {
             month: 'short'
         });
     };
+
+    // Calculate total years of experience
+    const calculateTotalExperience = () => {
+        let totalMonths = 0;
+
+        experience.forEach(exp => {
+            const startDate = new Date(exp.startDate);
+            const endDate = exp.current ? new Date() : new Date(exp.endDate);
+
+            const monthsDiff = (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+                (endDate.getMonth() - startDate.getMonth());
+
+            totalMonths += Math.max(0, monthsDiff);
+        });
+
+        const years = Math.floor(totalMonths / 12);
+        const months = totalMonths % 12;
+
+        if (years === 0) {
+            return `${months}+`;
+        } else if (months === 0) {
+            return `${years}+`;
+        } else {
+            return `${years}.${months}+`;
+        }
+    };
+
+    // Calculate unique companies count
+    const uniqueCompanies = new Set(experience.map(exp => exp.company)).size;
+
+    // Calculate unique technologies count
+    const allTechnologies = experience.flatMap(exp => exp.technologies);
+    const uniqueTechnologies = new Set(allTechnologies).size;
 
     return (
         <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8">
@@ -31,7 +64,19 @@ export const Experience = () => {
                                     <div className="flex items-center gap-3">
                                         <Building2 className="w-5 h-5 text-purple-400" />
                                         <div>
-                                            <h3 className="text-lg font-semibold text-purple-400">{exp.company}</h3>
+                                            {exp.website ? (
+                                                <a
+                                                    href={exp.website}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-lg font-semibold text-purple-400 hover:text-purple-300 transition-colors duration-200 flex items-center gap-2 group"
+                                                >
+                                                    {exp.company}
+                                                    <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                                                </a>
+                                            ) : (
+                                                <h3 className="text-lg font-semibold text-purple-400">{exp.company}</h3>
+                                            )}
                                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                                                 <MapPin className="w-4 h-4" />
                                                 {exp.location}
@@ -102,15 +147,15 @@ export const Experience = () => {
                     <h3 className="text-xl font-semibold text-purple-400 mb-4">Experience Summary</h3>
                     <div className="grid md:grid-cols-3 gap-6">
                         <div className="text-center">
-                            <div className="text-2xl font-bold text-purple-400">2+</div>
+                            <div className="text-2xl font-bold text-purple-400">{calculateTotalExperience()}</div>
                             <div className="text-sm text-muted-foreground">Years of Experience</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-2xl font-bold text-pink-400">2</div>
+                            <div className="text-2xl font-bold text-pink-400">{uniqueCompanies - 1}</div>
                             <div className="text-sm text-muted-foreground">Companies Worked</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-2xl font-bold text-green-400">15+</div>
+                            <div className="text-2xl font-bold text-green-400">{uniqueTechnologies}+</div>
                             <div className="text-sm text-muted-foreground">Technologies Mastered</div>
                         </div>
                     </div>
