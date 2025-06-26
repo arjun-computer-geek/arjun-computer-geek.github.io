@@ -1,12 +1,13 @@
-
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft } from "lucide-react";
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 
 const NotFound = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  useScrollToTop();
 
   useEffect(() => {
     console.error(

@@ -17,6 +17,13 @@ export const useAnchorScroll = () => {
           });
         }
       }, 100);
+    } else if (location.pathname === '/') {
+      // If we're on the home page without a hash, scroll to top
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
     }
   }, [location.hash, location.pathname]);
 }; 

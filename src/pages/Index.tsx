@@ -9,10 +9,12 @@ import { Navigation } from "@/components/Navigation";
 import { SEO } from "@/components/SEO";
 import { StructuredData } from "@/components/StructuredData";
 import { useAnchorScroll } from "@/hooks/use-anchor-scroll";
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 import DevToBlogFeed from '../components/DevToBlogFeed';
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  useScrollToTop();
   useAnchorScroll();
   const navigate = useNavigate();
 

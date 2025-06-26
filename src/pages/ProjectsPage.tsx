@@ -6,10 +6,12 @@ import { projects } from "@/data/projects";
 import { Navigation } from "@/components/Navigation";
 import { SEO } from "@/components/SEO";
 import { StructuredData } from "@/components/StructuredData";
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 
 const CHAR_LIMIT = 50;
 
 const ProjectsPage = () => {
+  useScrollToTop();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [expandedProjects, setExpandedProjects] = useState<Set<string>>(new Set());
 
@@ -63,7 +65,7 @@ const ProjectsPage = () => {
 
             {/* Category Filter */}
             <div className="flex items-center justify-center mb-8 xs:mb-10 xxs:mb-6 px-1 xs:px-2">
-              <div className="glass rounded-lg xs:rounded-xl p-2 xs:p-3 flex flex-col xs:flex-row items-stretch xs:items-center gap-2 xs:gap-3 w-full max-w-xs xs:max-w-md xxs:max-w-[90vw]">
+              <div className="glass rounded-lg xs:rounded-xl p-2 xs:p-3 flex flex-col xs:flex-row items-stretch xs:items-center gap-2 xs:gap-3 w-full max-w-[95vw] sm:max-w-md md:max-w-lg">
                 <div className="flex items-center gap-1 xs:gap-2 mb-1 xs:mb-0">
                   <Filter className="w-4 h-4 xs:w-5 xs:h-5 text-purple-400" />
                   <span className="text-xs xs:text-sm font-medium text-purple-400 hidden xxs:inline">Filter</span>

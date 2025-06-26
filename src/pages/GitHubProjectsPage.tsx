@@ -8,9 +8,11 @@ import { Navigation } from "@/components/Navigation";
 import { GitHubRepo } from "@/lib/github";
 import { SEO } from "@/components/SEO";
 import { StructuredData } from "@/components/StructuredData";
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 import moment from "moment";
 
 const GitHubProjectsPage = () => {
+    useScrollToTop(); // Scroll to top when navigating to this page
     const { data: repos, isLoading, error } = useGitHubRepos();
     const [searchTerm, setSearchTerm] = useState("");
     const [selectedLanguage, setSelectedLanguage] = useState("All");

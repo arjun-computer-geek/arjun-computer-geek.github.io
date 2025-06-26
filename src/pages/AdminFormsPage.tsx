@@ -1,10 +1,12 @@
-
 import { Navigation } from "@/components/Navigation";
 import { CreateProjectForm } from '../components/forms/CreateProjectForm';
 import { CreateBlogForm } from '../components/forms/CreateBlogForm';
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 import { toast } from "sonner";
 
 const AdminFormsPage = () => {
+  useScrollToTop(); // Scroll to top when navigating to this page
+
   const handleProjectSubmit = (data: any) => {
     toast.success("Project created successfully!", {
       description: `"${data.title}" has been added to your portfolio.`

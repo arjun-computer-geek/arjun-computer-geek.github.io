@@ -2,8 +2,11 @@ import { Navigation } from "@/components/Navigation";
 import DevToBlogFeed from '../components/DevToBlogFeed';
 import { SEO } from "@/components/SEO";
 import { StructuredData } from "@/components/StructuredData";
+import { useScrollToTop } from "@/hooks/use-scroll-to-top";
 
 const BlogPage = () => {
+  useScrollToTop();
+
   return (
     <>
       <SEO
