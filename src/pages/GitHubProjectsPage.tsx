@@ -131,7 +131,7 @@ const GitHubProjectsPage = () => {
     }
 
     const renderRepositoryCard = (repo: GitHubRepo) => (
-        <div key={repo.id} className="glass rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 hover:scale-105 transition-all duration-300 glow-border group flex flex-col h-full relative">
+        <div key={repo.id} className="glass rounded-lg xs:rounded-xl sm:rounded-2xl p-2 xs:p-3 sm:p-4 md:p-6 hover:scale-105 transition-all duration-300 glow-border group flex flex-col h-full relative min-w-0 w-full">
             {/* Card Header */}
             <div className="flex items-start justify-between mb-2 sm:mb-4 gap-2">
                 <h3 className="text-base sm:text-lg md:text-xl font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
@@ -144,7 +144,7 @@ const GitHubProjectsPage = () => {
             </div>
 
             {/* Card Description */}
-            <p className="text-muted-foreground leading-relaxed mb-2 sm:mb-4 min-h-[3rem] sm:min-h-[4rem] text-xs sm:text-sm md:text-base">
+            <p className="text-muted-foreground leading-relaxed mb-2 sm:mb-4 min-h-[3rem] sm:min-h-[4rem] text-xs sm:text-sm md:text-base break-words">
                 {repo.description || 'No description available'}
             </p>
 
@@ -280,7 +280,7 @@ const GitHubProjectsPage = () => {
                                 <div className="flex-1 h-px bg-gradient-to-r from-yellow-500/50 to-transparent"></div>
                             </div>
                             {filteredPinnedRepos.length > 0 ? (
-                                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 w-full">
                                     {filteredPinnedRepos.map(renderRepositoryCard)}
                                 </div>
                             ) : (
@@ -307,7 +307,7 @@ const GitHubProjectsPage = () => {
                                 <h2 className="text-2xl font-bold text-purple-400">All Projects</h2>
                                 <div className="flex-1 h-px bg-gradient-to-r from-purple-500/50 to-transparent"></div>
                             </div>
-                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 w-full">
                                 {filteredOtherRepos.map(renderRepositoryCard)}
                             </div>
                         </div>

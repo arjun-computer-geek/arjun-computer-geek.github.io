@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -51,22 +52,22 @@ export const Navigation = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "glass backdrop-blur-md" : "bg-transparent"
       }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+      <div className="max-w-7xl mx-auto px-2 xs:px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-3 xs:py-4">
           <button
             onClick={() => handleNavigation("/")}
-            className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
+            className="text-lg xs:text-xl sm:text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
           >
             Arjun
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex space-x-6 xl:space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => handleNavigation(item.href)}
-                className="text-foreground hover:text-purple-400 transition-colors duration-200 relative group"
+                className="text-sm xl:text-base text-foreground hover:text-purple-400 transition-colors duration-200 relative group"
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400 transition-all duration-300 group-hover:w-full"></span>
@@ -75,25 +76,25 @@ export const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground hover:text-purple-400 transition-colors"
+              className="text-foreground hover:text-purple-400 transition-colors p-1"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full glass backdrop-blur-md border-t border-border">
-            <div className="px-4 py-6 space-y-4">
+          <div className="lg:hidden absolute top-full left-0 w-full backdrop-blur-md border-t border-border">
+            <div className="bg-background/90 px-2 xs:px-4 py-4 xs:py-6 space-y-3 xs:space-y-4 max-h-[70vh] overflow-y-auto shadow-xl">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => handleNavigation(item.href)}
-                  className="block text-foreground hover:text-purple-400 transition-colors duration-200 w-full text-left"
+                  className="block text-sm xs:text-base text-foreground hover:text-purple-400 transition-colors duration-200 w-full text-left py-2 px-2 rounded-md hover:bg-purple-500/10"
                 >
                   {item.name}
                 </button>
