@@ -70,7 +70,7 @@ export const About = () => {
             <div className="space-y-4 xs:space-y-6 sm:space-y-8 order-1 md:order-2">
               <div className="space-y-3 xs:space-y-4 sm:space-y-6">
                 <p className="text-sm xs:text-base sm:text-lg text-muted-foreground leading-relaxed px-1">
-                  I'm a passionate Full Stack Developer with over {calculateTotalExperience()} of experience in creating innovative web solutions.
+                  I'm a passionate Full Stack Developer and freelancer with over {calculateTotalExperience()} of experience in creating innovative web solutions.
                   My journey in tech started with a web development bootcamp and has evolved into a deep passion for
                   building applications that make a difference in the digital world.
                 </p>

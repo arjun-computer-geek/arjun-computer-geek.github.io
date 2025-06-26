@@ -207,12 +207,14 @@ const ProjectsPage = () => {
                           </a>
                         </Button>
                       )}
-                      <Button size="sm" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 w-full xs:w-auto">
-                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                          <ArrowRight className="w-4 h-4 rotate-45" />
-                          Live Demo
-                        </a>
-                      </Button>
+                      {project.live && (
+                        <Button size="sm" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 w-full xs:w-auto">
+                          <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                            <ArrowRight className="w-4 h-4 rotate-45" />
+                            Live Demo
+                          </a>
+                        </Button>
+                      )}
                     </div>
                   </div>
                 </div>
