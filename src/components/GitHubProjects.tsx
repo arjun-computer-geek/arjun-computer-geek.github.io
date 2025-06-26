@@ -2,6 +2,7 @@ import { Github, Star, GitFork, ExternalLink, Calendar, Loader2 } from "lucide-r
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { usePinnedProjects } from "@/hooks/use-github";
+import moment from "moment";
 
 export const GitHubProjects = () => {
     const { data: projects, isLoading, error } = usePinnedProjects();
@@ -68,7 +69,6 @@ export const GitHubProjects = () => {
                             <div className="flex items-start justify-between mb-2 sm:mb-4 gap-2">
                                 <h3 className="text-base sm:text-lg md:text-xl font-semibold text-purple-400 group-hover:text-purple-300 transition-colors">
                                     {project.name}
-                                    {project.isPinned && <span className="inline ml-1 align-middle"><svg className="w-4 h-4 text-yellow-500 inline" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 6.343a8 8 0 11-11.314 0M12 2v10" /></svg></span>}
                                 </h3>
                                 <Badge variant="outline" className="border-purple-500/50 text-purple-300 text-xs sm:text-sm px-2 py-0.5">
                                     {project.language || 'Mixed'}
@@ -92,7 +92,7 @@ export const GitHubProjects = () => {
                                 </div>
                                 <div className="flex items-center gap-1">
                                     <Calendar className="w-4 h-4 text-green-500" />
-                                    <span>{new Date(project.updated_at).toLocaleDateString()}</span>
+                                    <span>{moment(project.updated_at).format('MMM DD, YYYY')}</span>
                                 </div>
                             </div>
 

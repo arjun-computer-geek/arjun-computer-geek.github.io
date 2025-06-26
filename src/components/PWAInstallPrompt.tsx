@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Download, X, Smartphone, Share, ArrowUp } from 'lucide-react';
+import moment from 'moment';
 
 interface BeforeInstallPromptEvent extends Event {
     readonly platforms: string[];
@@ -33,9 +34,9 @@ export function PWAInstallPrompt() {
             const dismissed = localStorage.getItem(PWA_PROMPT_KEY);
             if (!dismissed) return false;
 
-            const dismissedDate = new Date(dismissed);
-            const now = new Date();
-            const daysDiff = (now.getTime() - dismissedDate.getTime()) / (1000 * 60 * 60 * 24);
+            const dismissedDate = moment(dismissed);
+            const now = moment();
+            const daysDiff = now.diff(dismissedDate, 'days');
 
             return daysDiff < REMINDER_DELAY_DAYS;
         } catch (error) {
@@ -47,7 +48,7 @@ export function PWAInstallPrompt() {
     // Mark prompt as dismissed
     const markPromptDismissed = (type: 'remind-later' | 'got-it' = 'remind-later') => {
         try {
-            const now = new Date();
+            const now = moment();
             localStorage.setItem(PWA_PROMPT_KEY, now.toISOString());
 
             // If user clicked "Got it", extend the reminder period

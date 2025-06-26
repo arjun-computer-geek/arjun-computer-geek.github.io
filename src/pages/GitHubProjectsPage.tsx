@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { useGitHubRepos } from "@/hooks/use-github";
 import { Navigation } from "@/components/Navigation";
 import { GitHubRepo } from "@/lib/github";
+import moment from "moment";
 
 const GitHubProjectsPage = () => {
     const { data: repos, isLoading, error } = useGitHubRepos();
@@ -51,10 +52,10 @@ const GitHubProjectsPage = () => {
                 case "name":
                     return a.name.localeCompare(b.name);
                 case "created":
-                    return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+                    return moment(b.created_at).valueOf() - moment(a.created_at).valueOf();
                 case "updated":
                 default:
-                    return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
+                    return moment(b.updated_at).valueOf() - moment(a.updated_at).valueOf();
             }
         });
 
@@ -82,10 +83,10 @@ const GitHubProjectsPage = () => {
                 case "name":
                     return a.name.localeCompare(b.name);
                 case "created":
-                    return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+                    return moment(b.created_at).valueOf() - moment(a.created_at).valueOf();
                 case "updated":
                 default:
-                    return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
+                    return moment(b.updated_at).valueOf() - moment(a.updated_at).valueOf();
             }
         });
 
@@ -160,7 +161,7 @@ const GitHubProjectsPage = () => {
                 </div>
                 <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4 text-green-500" />
-                    <span>{new Date(repo.updated_at).toLocaleDateString()}</span>
+                    <span>{moment(repo.updated_at).format('MMM DD, YYYY')}</span>
                 </div>
             </div>
 

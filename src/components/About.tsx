@@ -2,22 +2,21 @@ import { useState } from "react";
 import { useGitHubStats } from "@/hooks/use-github";
 import { Loader2 } from "lucide-react";
 import { experience } from "@/data/experience";
+import moment from "moment";
 
 export const About = () => {
   const [imgError, setImgError] = useState(false);
   const { data: stats, isLoading: statsLoading } = useGitHubStats();
 
-  // Calculate total years of experience from local data
+  // Calculate total years of experience from local data using moment
   const calculateTotalExperience = () => {
     let totalMonths = 0;
 
     experience.forEach(exp => {
-      const startDate = new Date(exp.startDate);
-      const endDate = exp.current ? new Date() : new Date(exp.endDate);
+      const startDate = moment(exp.startDate);
+      const endDate = exp.current ? moment() : moment(exp.endDate);
 
-      const monthsDiff = (endDate.getFullYear() - startDate.getFullYear()) * 12 +
-        (endDate.getMonth() - startDate.getMonth());
-
+      const monthsDiff = endDate.diff(startDate, 'months');
       totalMonths += Math.max(0, monthsDiff);
     });
 
@@ -27,9 +26,9 @@ export const About = () => {
     if (years === 0) {
       return `${months} months`;
     } else if (months === 0) {
-      return `${years} years`;
+      return `${years} + years`;
     } else {
-      return `${years}.${months} years`;
+      return `${years}.${months}+ years`;
     }
   };
 
@@ -71,7 +70,7 @@ export const About = () => {
             <div className="space-y-4 xs:space-y-6 sm:space-y-8 order-1 md:order-2">
               <div className="space-y-3 xs:space-y-4 sm:space-y-6">
                 <p className="text-sm xs:text-base sm:text-lg text-muted-foreground leading-relaxed px-1">
-                  I'm a passionate Full Stack Developer with over 2 years of experience in creating innovative web solutions.
+                  I'm a passionate Full Stack Developer with over {calculateTotalExperience()} of experience in creating innovative web solutions.
                   My journey in tech started with a web development bootcamp and has evolved into a deep passion for
                   building applications that make a difference in the digital world.
                 </p>

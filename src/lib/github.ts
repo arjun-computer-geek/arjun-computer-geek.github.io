@@ -1,4 +1,5 @@
 import { PINNED_REPOSITORIES, PINNED_TOPICS } from '@/config/pinned-repos';
+import moment from 'moment';
 
 export interface GitHubRepo {
   id: number;
@@ -136,11 +137,10 @@ export class GitHubService {
   }
 
   static calculateExperience(): { months: number; years: number } {
-    const startDate = new Date(EXPERIENCE_START_DATE);
-    const currentDate = new Date();
+    const startDate = moment(EXPERIENCE_START_DATE);
+    const currentDate = moment();
     
-    const monthsDiff = (currentDate.getFullYear() - startDate.getFullYear()) * 12 + 
-                      (currentDate.getMonth() - startDate.getMonth());
+    const monthsDiff = currentDate.diff(startDate, 'months');
     
     const years = Math.floor(monthsDiff / 12);
     const months = monthsDiff % 12;
@@ -177,9 +177,9 @@ export class GitHubService {
     
     // Get commit dates
     const commitDates = repos
-      .map(repo => new Date(repo.pushed_at))
-      .filter(date => !isNaN(date.getTime()))
-      .sort((a, b) => a.getTime() - b.getTime());
+      .map(repo => moment(repo.pushed_at))
+      .filter(date => date.isValid())
+      .sort((a, b) => a.valueOf() - b.valueOf());
     
     const firstCommitDate = commitDates.length > 0 ? commitDates[0].toISOString() : null;
     const lastCommitDate = commitDates.length > 0 ? commitDates[commitDates.length - 1].toISOString() : null;

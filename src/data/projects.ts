@@ -31,6 +31,22 @@ export const projects: Project[] = [
   //   companyUrl: "https://www.iihglobal.com/"
   // },
   {
+    id: "next-ui-library",
+    title: "Next.js UI Library",
+    description: "A comprehensive Next.js template featuring a modern UI library built with Tailwind CSS, shadcn/ui components, and comprehensive testing.",
+    longDescription: "A comprehensive Next.js template featuring a modern UI library built with Tailwind CSS, shadcn/ui components, and comprehensive testing. This template provides a solid foundation for building scalable web applications with best practices in place. Includes 129 passing tests, custom Axios client with global error handling, full TypeScript support with Zod validation, responsive design with mobile-first approach, built-in dark mode, Zustand for state management, and optimized developer experience with ESLint and Prettier.",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=300&fit=crop",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Jest", "React Testing Library", "Zustand", "Axios", "Zod", "ESLint", "Prettier"],
+    github: "https://github.com/arjun-computer-geek/next-Ui-library",
+    live: "https://next-ui-library.vercel.app",
+    featured: true,
+    category: "Frontend",
+    company: "Self",
+    companyUrl: "https://arjun-computer-geek.github.io/",
+    private: false,
+
+  },
+  {
     id: "confidential",
     title: "confidential",
     description: "All-in-one tool for collecting feedback, building roadmaps, sharing changelogs and publishing knowledge bases.",
@@ -44,6 +60,21 @@ export const projects: Project[] = [
     private: true,
     company: "IIH Global",
     companyUrl: "https://www.iihglobal.com/"
+  },
+  {
+    id: "trading-platform",
+    title: "Trading Platform",
+    description: "Advanced trading platform with real-time market data, trade monitoring, and secure API integration with custom encryption.",
+    longDescription: "Developed a comprehensive trading platform featuring real-time market data visualization using WebSocket connections, trade monitoring dashboard, and secure API integration with custom encryption/decryption for payload security. Implemented authentication and authorization systems, built responsive frontend design using Next.js, and integrated real-time market data feeds for live trading capabilities.",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&h=300&fit=crop",
+    tech: ["Next.js", "WebSocket", "Real-time Data", "Custom Encryption", "Authentication", "Authorization", "Trading API", "Market Data"],
+    github: "#",
+    live: "",
+    featured: true,
+    category: "Frontend",
+    private: true,
+    company: "Freelance",
+    companyUrl: ""
   },
   {
     id: "zyapaar",

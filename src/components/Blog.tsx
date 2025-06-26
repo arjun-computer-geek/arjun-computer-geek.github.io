@@ -1,7 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
+import moment from "moment";
 
 export const Blog = () => {
   const featuredPosts = blogPosts.filter(post => post.featured).slice(0, 3);
@@ -35,11 +35,7 @@ export const Blog = () => {
                 <div className="flex items-center gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
-                    {new Date(post.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric'
-                    })}
+                    {moment(post.date).format('MMM DD, YYYY')}
                   </div>
                   <div className="flex items-center gap-1">
                     <Clock className="w-4 h-4" />

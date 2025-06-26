@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Search } from 'lucide-react';
+import moment from 'moment';
 
 interface DevToPost {
     id: number;
@@ -135,9 +136,7 @@ const DevToBlogFeed: React.FC<DevToBlogFeedProps> = ({ limit, showSearch = false
                         </div>
 
                         <div className="text-sm text-muted-foreground mb-3">
-                            {new Date(post.published_at).toLocaleDateString('en-US', {
-                                year: 'numeric', month: 'short', day: 'numeric'
-                            })}
+                            {moment(post.published_at).format('MMM DD, YYYY')}
                         </div>
 
                         <p className="text-muted-foreground leading-relaxed mb-4 min-h-[4rem] line-clamp-3">

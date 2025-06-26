@@ -1,28 +1,23 @@
 import { Calendar, MapPin, Building2, CheckCircle, ExternalLink } from "lucide-react";
 import { experience } from "@/data/experience";
 import { Badge } from "@/components/ui/badge";
+import moment from "moment";
 
 export const Experience = () => {
     const formatDate = (dateString: string) => {
         if (!dateString) return "Present";
-        const date = new Date(dateString);
-        return date.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'short'
-        });
+        return moment(dateString).format('MMM YYYY');
     };
 
-    // Calculate total years of experience
+    // Calculate total years of experience using moment
     const calculateTotalExperience = () => {
         let totalMonths = 0;
 
         experience.forEach(exp => {
-            const startDate = new Date(exp.startDate);
-            const endDate = exp.current ? new Date() : new Date(exp.endDate);
+            const startDate = moment(exp.startDate);
+            const endDate = exp.current ? moment() : moment(exp.endDate);
 
-            const monthsDiff = (endDate.getFullYear() - startDate.getFullYear()) * 12 +
-                (endDate.getMonth() - startDate.getMonth());
-
+            const monthsDiff = endDate.diff(startDate, 'months');
             totalMonths += Math.max(0, monthsDiff);
         });
 
