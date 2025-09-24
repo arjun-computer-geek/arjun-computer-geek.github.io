@@ -3,7 +3,31 @@ import { Button } from "@/components/ui/button";
 
 export const Contact = () => {
   const handleResumeClick = () => {
-    window.open("/Arjun_resume.pdf", "_blank");
+    try {
+      const resumeUrl = "/Arjun_resume.pdf";
+
+      // Method 1: Try direct download with proper filename
+      const link = document.createElement('a');
+      link.href = resumeUrl;
+      link.download = 'Arjun_Kumar_Resume.pdf';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+
+      // Add to DOM, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // If the above doesn't work, try opening in new tab as fallback
+      setTimeout(() => {
+        window.open(resumeUrl, '_blank');
+      }, 100);
+
+    } catch (error) {
+      console.error('Error downloading resume:', error);
+      // Final fallback: try window.open
+      window.open("/Arjun_resume.pdf", "_blank");
+    }
   };
 
   return (
